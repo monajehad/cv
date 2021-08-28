@@ -15,7 +15,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">link
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="company_name" placeholder="Company Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="link" placeholder="Http://" />
 																					</div>
 																				</div>
 																				<div class="form-group row">

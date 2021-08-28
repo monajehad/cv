@@ -144,7 +144,18 @@
 									</a>
 								</li>
 
-								
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="{{route('testimonial')}}" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+										  <span class="flaticon2-hangouts-logo icon-lg "></span>
+
+										</span>
+																			
+											<span class="menu-text">Testimonial</span>
+									<!-- <i class="menu-arrow"></i> -->
+									</a>
+								</li>
+
 							</ul>
 							<!--end::Menu Nav-->
 						</div>
