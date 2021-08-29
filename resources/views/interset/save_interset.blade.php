@@ -8,14 +8,14 @@
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Interset Name
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Interset Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="co_name" placeholder="Interset Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="interset_name" placeholder="Interset Name" />
 																					</div>
 																				</div>
 																
@@ -24,9 +24,11 @@
                                                                                 <div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
 																					<div class="col-lg-9 col-xl-6">
-																						  <div class="input-group input-group-lg input-group-solid"  >
-																						  <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea>
-                                                                                          </div>
+																						  <div class=" input-group-solid"  >
+																						  <!-- <textarea name="description" class="form-control" data-provide="markdown" rows="10"></textarea> -->
+																						  <div id="kt_quil_1" style="height: 325px; ">Compose a message</div>
+
+																						</div>
                                                                                       </div>
 																				</div>
                                                                                 

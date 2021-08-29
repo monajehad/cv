@@ -8,18 +8,18 @@
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">link
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">link <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" name="link" placeholder="Http://" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> Social media</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> Social media <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
 																					   <select class="form-control form-control-lg form-control-solid selectpicker"  >
                                                                                           

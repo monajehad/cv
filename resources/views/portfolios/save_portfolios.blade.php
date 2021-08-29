@@ -8,28 +8,28 @@
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Portfolios Name
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Portfolios Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" name="portfolios_name" placeholder="Portfolios Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Link</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Link <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" name="link" placeholder="http://" />
 																					</div>
 																				</div>
 																				
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Completion date</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Completion date <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
 																						<div class="input-group input-group-lg input-group-solid date"  id='kt_datepicker_3'>
-                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" readonly="readonly" placeholder="Select date range" />
+                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" name="date" readonly="readonly" placeholder="Select date range" />
                                                                                                 <div class="input-group-append">
                                                                                                     <span class="input-group-text">
                                                                                                         <i class="la la-calendar"></i>
@@ -42,10 +42,12 @@
                                                                                 <div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
                                                                                  <div class="col-lg-9 col-xl-6">
-																						  <div class="input-group input-group-lg input-group-solid"  >
-																						  <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea>
+																				 <div id="kt_quil_1" style="height: 325px; ">Compose a message</div>
+
+																				 <!-- <div class="input-group input-group-lg input-group-solid"  >
+																						  <textarea name="description" class="form-control" data-provide="markdown" rows="10"></textarea>
                                                                																					                           </div>
-                                                                                      </div>
+                                                                                      </div> -->
 																				</div>
                                                                                 
 																			</form>

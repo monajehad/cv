@@ -7,7 +7,7 @@
   
 <!-- begin:: Subheader -->
 <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
-							<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+					<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
 								<!--begin::Info-->
 								<div class="d-flex align-items-center flex-wrap mr-1">
 									<!--begin::Mobile Toggle-->
@@ -16,17 +16,20 @@
 									</button>
 									<!--end::Mobile Toggle-->
 									<!--begin::Page Heading-->
-									<div class="d-flex align-items-baseline flex-wrap mr-5">
+									<div class="d-flex align-items-baseline flex-wrap mr-5 ">
 										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Education</h5>
+										<span class="card-icon">
+												<i class="flaticon-layer text-primary"></i>
+											</span>
+										<h5 class="text-dark font-weight-bold my-1 mr-5 ml-3">Education</h5>
 										<!--end::Page Title-->
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
 									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalCustomScrollable">Add education</a>
-                            </div>
-                            </div>
+                                </div>
+					</div>     
                           
 </div>
 
@@ -49,10 +52,22 @@
 									</div> -->
 									<div class="card-body">
 									 <!--begin::Engage Widget 1-->
-                                     <div class="card card-custom card-stretch gutter-b col-8 mx-auto">
+                                     <div class=" col-8 mx-auto">
+										 	<!--begin::Engage Widget 4-->
+										<div class="card card-custom card-stretch gutter-b">
 											<div class="card-body d-flex p-0">
-												<div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url({{asset('metronic/media/svg/humans/custom-2.svg')}})">
+												<div class="flex-grow-1 bg-light-success p-12 pb-40 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(80% + 0.9rem) bottom; background-size: 50% auto; background-image: url({{asset('metronic/media/education2.jpg')}})">
+													<p class="text-success pt-10 pb-5 font-size-h3 font-weight-bolder line-height-lg">Start with a branding
+													<br />site design modern
+													<br />content creation</p>
+													<a href="#" class="btn btn-success font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalCustomScrollable">Add education</a>
+												</div>
+											</div>
+										</div>
+											<!-- <div class="card-body d-flex p-0">
+												<div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url({{asset('metronic/media/education.jpg')}})">
 													<div class="row">
+														
 														<div class="col-12 col-xl-5"></div>
 														<div class="col-12 col-xl-7">
 															<h4 class="text-danger font-weight-bolder">Welcome to the
@@ -64,7 +79,7 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> -->
 										</div>
 										<!--end::Engage Widget 1-->
 									</div>
@@ -74,17 +89,7 @@
                                 <br>
                                 <!--begin::Card-->
 										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon-layer text-primary"></i>
-													</span>
-													<h3 class="card-label">Your Education
-
-													</h3>
-												</div>
-
-											</div>
+										
 											<div class="card-body col-8 mx-auto"> 
                                             <div class="d-flex align-items-center bg-light-info rounded p-5 mb-9">
 													<!--begin::Title-->

@@ -169,10 +169,7 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('layouts.cpanel.scrolltop')
 		
 		<!--end::Scrolltop-->
-		<!--begin::Sticky Toolbar-->
-        @include('layouts.cpanel.sticky_toolbar')
 		
-		<!--end::Sticky Toolbar-->
 		<!--begin::Demo Panel-->
         @include('layouts.cpanel.demo_panel')
 		
@@ -185,6 +182,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Page Scripts-->
 	</body>
     @include('layouts.script')
-    yield('script')
+    @yield('script')
+	
 	<!--end::Body-->
 </html>

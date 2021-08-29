@@ -8,27 +8,28 @@
 </style>
 @endsection
 @section('subheader')
-  
-<!-- begin:: Subheader -->
-<div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+  	<!--begin::Subheader-->
+	  <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
 							<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-								<!--begin::Info-->
-								<div class="d-flex align-items-center flex-wrap mr-1">
-									<!--begin::Mobile Toggle-->
-									<button class="burger-icon burger-icon-left mr-4 d-inline-block d-lg-none" id="kt_subheader_mobile_toggle">
-										<span></span>
-									</button>
-									<!--end::Mobile Toggle-->
-									<!--begin::Page Heading-->
-									<div class="d-flex align-items-baseline flex-wrap mr-5">
-										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Personal Information</h5>
-										<!--end::Page Title-->
-                                    </div>
-                                </div>
-                            </div>
-</div>
-
+								<!--begin::Details-->
+								<div class="d-flex align-items-center flex-wrap mr-2">
+									<!--begin::Title-->
+									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Personal Information </h5>
+									<!--end::Title-->
+									
+								</div>
+								<!--end::Details-->
+								<!--begin::Toolbar-->
+								<div class="d-flex align-items-center">
+									<!--begin::Button-->
+									<button type="button" class="btn btn-primary font-weight-bolder">
+														<i class="ki ki-check icon-sm"></i>Save Form</button>										<!--end::Button-->
+									
+								</div>
+								<!--end::Toolbar-->
+							</div>
+						</div>
+                  
 @endsection
 @section('content')
 <!--begin::Portlet-->
@@ -38,19 +39,7 @@
 							<div class="container">
 								<!--begin::Card-->
 								<div class="card card-custom card-sticky" id="kt_page_sticky_card">
-									<div class="card-header">
-										<div class="card-title">
-											<h3 class="card-label">Personal Information
-											<i class="mr-2"></i>
-										</div>
-										<div class="card-toolbar">
-											<div class="btn-group">
-												<button type="button" class="btn btn-primary font-weight-bolder">
-												<i class="ki ki-check icon-sm"></i>Save Form</button>
-												
-											</div>
-										</div>
-									</div>
+									
 									<div class="card-body">
 										<!--begin::Form-->
 										<form class="form" id="kt_form">
@@ -82,13 +71,13 @@
                                                             
                                                             
                                                                 <div class="form-group row">
-                                                                        <label class="col-3">Full Name</label>
+                                                                        <label class="col-3">Full Name <span style="color:red;font-size: large;">*</span></label>
                                                                         <div class="col-9">
                                                                             <input class="form-control form-control-solid" type="text" name="fullname" placeholder="full name" />
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3">Email</label>
+                                                                        <label class="col-3">Email <span style="color:red;font-size: large;">*</span></label>
                                                                         <div class="col-9">
                                                                             <div class="input-group input-group-solid">
                                                                                 <div class="input-group-prepend">
@@ -100,8 +89,19 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+																	<div class="form-group row">
+                                                                        <label class="col-3">Gender <span style="color:red;font-size: large;">*</span></label>
+                                                                        <div class="col-9 radio-inline">
+																			<label class="radio">
+																			<input type="radio" name="gender" />
+																			<span></span>Option 1</label>
+																			<label class="radio">
+																			<input type="radio" name="gender" />
+																			<span></span>Option 2</label>
+																		</div>
+                                                                    </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3">Contact Phone</label>
+                                                                        <label class="col-3">Contact Phone <span style="color:red;font-size: large;">*</span></label>
                                                                         <div class="col-9">
                                                                             <div class="input-group input-group-solid">
                                                                                 <div class="input-group-prepend">
@@ -115,7 +115,7 @@
                                                                         </div>
                                                                     </div>
                                                         <div class="form-group row">
-                                                             <label class="col-3">Birthday</label>
+                                                             <label class="col-3">Birthday <span style="color:red;font-size: large;">*</span></label>
                                                             <div class="col-9">
                                                                     <div class="input-group date input-group-solid">
                                                                         <input type="text" class="form-control form-control-solid" readonly="readonly" value="05/20/2017" id="kt_datepicker_3" name="birthday" />
@@ -129,14 +129,14 @@
                                                             </div>
                                                         </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3">Nationality</label>
+                                                                        <label class="col-3"> Original Nationality <span style="color:red;font-size: large;">*</span></label>
                                                                         <div class="col-9">
                                                                             <input class="form-control form-control-solid" type="text" placeholder="nationality" name="nationality" value="" />
                                                                             <span class="form-text text-muted">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
                                                                         </div>
                                                                     </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-3">Marital</label>
+                                                                    <label class="col-3">Marital <span style="color:red;font-size: large;">*</span></label>
                                                                     <div class=" col-9 ">
                                                                         <div class="input-group input-group-solid">
                                                                             <select class="form-control form-control-solid " id="kt_select2_1" name="marital">
@@ -151,7 +151,7 @@
                                                                  </div>
                                                                 
                                             <div class="form-group row">
-												<label class="col-form-label  col-3 ">Language </label>
+												<label class="col-form-label  col-3 ">Language <span style="color:red;font-size: large;">*</span></label>
 												<div class="col-9 ">
 													<select class="form-control select2 form-control-solid " id="kt_select2_3" name="language" multiple="multiple">
                                                     <option value="af">Afrikaans</option>
@@ -302,7 +302,7 @@
 											</div>
                                        
 											<div class="form-group row">
-												<label class="col-form-label col-3 ">Country </label>
+												<label class="col-form-label col-3 ">Country <span style="color:red;font-size: large;">*</span></label>
 												<div class=" col-9 ">
 													<select class="form-control select2 form-control-solid " id="kt_select2_2" name="country">
                                                     <option value="AF">Afghanistan</option>
@@ -560,17 +560,26 @@
 											
                                                          
                                                           <div class="form-group row">
-                                                                <label class="col-3">City</label>
+                                                                <label class="col-3">City <span style="color:red;font-size: large;">*</span></label>
                                                                  <div class="col-9">
                                                                   <input class="form-control form-control-solid" type="text" name="city" value="" placeholder="city"/>
+                                                                </div>
+                                                           </div> 
+
+														   <div class="form-group row">
+                                                                <label class="col-3">Street <span style="color:red;font-size: large;">*</span></label>
+                                                                 <div class="col-9">
+                                                                  <input class="form-control form-control-solid" type="text" name="street" value="" placeholder="Street"/>
                                                                 </div>
                                                            </div> 
 
                                                          <div class="form-group row">
                                                             <label class="col-3">description</label>
                                                             <div class="col-9">
-															  <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea>
-                                                            </div>
+															  <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
+															  <div id="kt_quil_1" style="height: 325px; ">Compose a message</div>
+
+															</div>
                                                           </div>    
                                                     </div>  
 												</div>

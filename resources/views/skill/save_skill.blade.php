@@ -8,21 +8,21 @@
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">skill Name
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">skill Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="co_name" placeholder="Skill Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="sk_name" placeholder="Skill Name" />
 																					</div>
 																				</div>
 																				
 																				
 																				
                                                                                 <div class="form-group row">
-																					 <label class="col-xl-3 col-lg-3 text-left col-form-label">level</label>
+																					 <label class="col-xl-3 col-lg-3 text-left col-form-label">level <span style="color:red;font-size: large;">*</span></label>
 																					  <div class="col-lg-9 col-xl-6">
                                                                                             <select class="form-control selectpicker form-control-solid "  name="level" >
 																						       <option value="jn">junior</option>

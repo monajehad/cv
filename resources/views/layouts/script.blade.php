@@ -12,4 +12,5 @@
 		<script src="{{asset('metronic/js/pages/crud/forms/widgets/select2.js')}}"></script>
 		<script src="{{asset('js/aside_menu_mark.js')}}"></script>
 		<script src="{{asset('metronic/js/pages/crud/forms/widgets/bootstrap-daterangepicker.js')}}"></script>
+		<script src="{{asset('metronic/js/pages/crud/forms/editors/quill.js')}}"></script>
 

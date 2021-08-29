@@ -3,31 +3,31 @@
 															<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
 																<div class="modal-content">
 																	<div class="modal-header">
-																		<h5 class="modal-title" id="exampleModalLabel">Add New Work</h5>
+																		<h5 class="modal-title" id="exampleModalLabel">Add New Work <span style="color:red;font-size: large;">*</span></h5>
 																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Company Name
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Company Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" name="company_name" placeholder="Company Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Job Title</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Job Title <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="work_name" placeholder="Work Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="job_title" placeholder="Work Name" />
 																					</div>
 																				</div>
 																				
 																				
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end)</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end) <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
 																						<div class="input-group input-group-lg input-group-solid"  id='kt_daterangepicker_2'>
                                                                                            <input type='text' class="form-control form-control-lg form-control-solid" name="date"readonly="readonly" placeholder="Select date range" />

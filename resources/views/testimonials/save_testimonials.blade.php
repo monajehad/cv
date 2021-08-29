@@ -8,25 +8,25 @@
 																			<i aria-hidden="true" class="ki ki-close"></i>
 																		</button>
 																	</div>
-																	<div class="modal-body">
+																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Name
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="test-name" placeholder="Person's Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="person_name" placeholder="Person's Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's email
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's email <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="person-email" placeholder=" Person's email" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="person_email" placeholder=" Person's email" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Phone
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Phone <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																					<div class="input-group input-group-solid">
@@ -35,15 +35,17 @@
 																										<i class="la la-phone"></i>
 																									</span>
 																								</div>
-																								<input type="text" class="form-control form-control-solid" name="person-mobile" placeholder="+45678967456" placeholder="Phone" />
+																								<input type="text" class="form-control form-control-solid" name="person_mobile" placeholder="+45678967456" placeholder="Phone" />
 																							</div>																					</div>
 																				</div>
                                                                                 <div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">About opinion</label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label">About opinion <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																						  <div class="input-group input-group-lg input-group-solid"  >
+																					<div id="kt_quil_1" style="height: 325px; ">Compose a message</div>
+ 
+																					<!-- <div class="input-group input-group-lg input-group-solid"  >
 																						  <textarea name="about" class="form-control" data-provide="markdown" rows="10"></textarea>
-                                                                                          </div>
+                                                                                          </div> -->
                                                                                       </div>
 																				</div>
 																				

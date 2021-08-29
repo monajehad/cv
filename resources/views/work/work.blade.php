@@ -18,6 +18,17 @@
 									<!--begin::Page Heading-->
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 										<!--begin::Page Title-->
+										<span class="card-icon mr-3">
+                                                    
+                                                            <span class="svg-icon svg-icon-primary">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24"/>
+                                                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"/>
+                                                                        </g>
+                                                                    </svg><!--end::Svg Icon-->
+                                                            </span>
+                                                    </span>
 										<h5 class="text-dark font-weight-bold my-1 mr-5">Work</h5>
 										<!--end::Page Title-->
                                     </div>
@@ -49,23 +60,18 @@
 									</div> -->
 									<div class="card-body">
 									 <!--begin::Engage Widget 1-->
-                                     <div class="card card-custom card-stretch gutter-b col-8 mx-auto">
+                                 <div class="col-8 mx-auto">
+									 <div class="card card-custom card-stretch gutter-b">
 											<div class="card-body d-flex p-0">
-												<div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url({{asset('metronic/media/svg/humans/custom-2.svg')}})">
-													<div class="row">
-														<div class="col-12 col-xl-5"></div>
-														<div class="col-12 col-xl-7">
-															<h4 class="text-danger font-weight-bolder">Welcome to the
-                                                            
-                                                                 Work Information section</h4>
-															<p class="text-dark-50 my-5 font-size-xl font-weight-bold">add your work through the button to
-                                                             add it inside your cv</p>
-															<a href="#" class="btn btn-danger font-weight-bold py-2 px-6" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_work">Add work </a>
-														</div>
-													</div>
+												<div class="flex-grow-1 bg-light-success p-12 pb-40 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(80% + 0.9rem) bottom; background-size: 50% auto; background-image: url({{asset('metronic/media/work.jpg')}})">
+													<p class="text-success pt-10 pb-5 font-size-h3 font-weight-bolder line-height-lg">Start with a branding
+													<br />site design modern
+													<br />content creation</p>
+													<a href="#" class="btn btn-success font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_work">Add work</a>
 												</div>
 											</div>
 										</div>
+									</div>
 										<!--end::Engage Widget 1-->
 									</div>
 								</div>
@@ -74,25 +80,7 @@
                                 <br>
                                 <!--begin::Card-->
 										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-                                                    
-                                                            <span class="svg-icon svg-icon-primary">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                            <rect x="0" y="0" width="24" height="24"/>
-                                                                            <path d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z" fill="#000000"/>
-                                                                        </g>
-                                                                    </svg><!--end::Svg Icon-->
-                                                            </span>
-                                                    </span>
-													<h3 class="card-label">Your Work
-
-													</h3>
-												</div>
-
-											</div>
+											
 											<div class="card-body col-8 mx-auto"> 
                                             <div class="d-flex align-items-center bg-light-info rounded p-5 mb-9">
 													<!--begin::Title-->

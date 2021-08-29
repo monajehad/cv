@@ -18,6 +18,9 @@
 									<!--begin::Page Heading-->
 									<div class="d-flex align-items-baseline flex-wrap mr-5">
 										<!--begin::Page Title-->
+										<span class="card-icon mr-3">
+														<span class="flaticon-earth-globe icon-lg text-primary"></span>
+													</span>
 										<h5 class="text-dark font-weight-bold my-1 mr-5">Social</h5>
 										<!--end::Page Title-->
                                     </div>
@@ -49,22 +52,17 @@
 									</div> -->
 									<div class="card-body">
 									 <!--begin::Engage Widget 1-->
-                                     <div class="card card-custom card-stretch gutter-b col-8 mx-auto">
+                                     <div class="col-8 mx-auto">
+									 <div class="card card-custom card-stretch gutter-b">
 											<div class="card-body d-flex p-0">
-												<div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url({{asset('metronic/media/svg/humans/custom-2.svg')}})">
-													<div class="row">
-														<div class="col-12 col-xl-5"></div>
-														<div class="col-12 col-xl-7">
-															<h4 class="text-danger font-weight-bolder">Welcome to the
-                                                            
-                                                                 Social Information section</h4>
-															<p class="text-dark-50 my-5 font-size-xl font-weight-bold">add your social through the button to
-                                                             add it inside your cv</p>
-															<a href="#" class="btn btn-danger font-weight-bold py-2 px-6" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_social">Add social </a>
-														</div>
-													</div>
+												<div class="flex-grow-1 bg-light-success p-12 pb-40 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(80% + 0.9rem) bottom; background-size: 50% auto; background-image: url({{asset('metronic/media/social.jpg')}})">
+													<p class="text-success pt-10 pb-5 font-size-h3 font-weight-bolder line-height-lg">Start with a branding
+													<br />site design modern
+													<br />content creation</p>
+													<a href="#" class="btn btn-success font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_social">Add social</a>
 												</div>
 											</div>
+										</div>
 										</div>
 										<!--end::Engage Widget 1-->
 									</div>
@@ -74,21 +72,7 @@
                                 <br>
                                 <!--begin::Card-->
 										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-                                                    
-
-													<span class="card-icon">
-														<span class="flaticon-earth-globe icon-lg text-primary"></span>
-													</span>
-                                                    </span>
-													<h3 class="card-label">Your Social
-
-													</h3>
-												</div>
-
-											</div>
+				
 											<div class="card-body col-8 mx-auto"> 
                                           <!--begin::Item-->
 												<div class="d-flex align-items-center mb-9 bg-light-info rounded p-5">
