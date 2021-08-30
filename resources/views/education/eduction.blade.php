@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalCustomScrollable">Add education</a>
+									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_educatio">Add education</a>
                                 </div>
 					</div>     
                           
@@ -39,58 +39,40 @@
     <div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-								<!--begin::Card-->
-								<div class="card card-custom card-sticky" id="kt_page_sticky_card">
-									<!-- <div class="card-header">
-										<div class="card-title">
-											<h3 class="card-label">Education
-											<i class="mr-2"></i>
+							  <div class="card">
+								<!--begin::Card body-->
+								    <div class="card-body p-0">
+										<!--begin::Wrapper-->
+									 	<div class="card-px text-center py-10 my-5">
+											<!--begin::Title-->
+											<h2 class="fs-2x fw-bolder mb-10">Welcome!</h2>
+											<!--end::Title-->
+											<!--begin::Description-->
+											<p class="text-gray-400 fs-4 fw-bold mb-10">There are no customers added yet.
+											<br />Kickstart your CRM by adding a your first customer</p>
+											<!--end::Description-->
+											<!--begin::Action-->
+											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_education">Add education</a>
+											<!--end::Action-->
 										</div>
-										<div class="card-toolbar">
-											
+										<!--end::Wrapper-->
+										<!--begin::Illustration-->
+										<div class="text-center px-4">
+											<img class="mw-100 h-300px" alt="" src="{{asset('metronic/media/education2.jpg')}}" />
 										</div>
-									</div> -->
-									<div class="card-body">
-									 <!--begin::Engage Widget 1-->
-                                     <div class=" col-8 mx-auto">
-										 	<!--begin::Engage Widget 4-->
-										<div class="card card-custom card-stretch gutter-b">
-											<div class="card-body d-flex p-0">
-												<div class="flex-grow-1 bg-light-success p-12 pb-40 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(80% + 0.9rem) bottom; background-size: 50% auto; background-image: url({{asset('metronic/media/education2.jpg')}})">
-													<p class="text-success pt-10 pb-5 font-size-h3 font-weight-bolder line-height-lg">Start with a branding
-													<br />site design modern
-													<br />content creation</p>
-													<a href="#" class="btn btn-success font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalCustomScrollable">Add education</a>
-												</div>
-											</div>
-										</div>
-											<!-- <div class="card-body d-flex p-0">
-												<div class="flex-grow-1 p-8 card-rounded bgi-no-repeat d-flex align-items-center" style="background-color: #FFF4DE; background-position: left bottom; background-size: auto 100%; background-image: url({{asset('metronic/media/education.jpg')}})">
-													<div class="row">
-														
-														<div class="col-12 col-xl-5"></div>
-														<div class="col-12 col-xl-7">
-															<h4 class="text-danger font-weight-bolder">Welcome to the
-                                                            
-                                                                 Education Information section</h4>
-															<p class="text-dark-50 my-5 font-size-xl font-weight-bold">add your education through the button to
-                                                             add it inside your cv</p>
-															<a href="#" class="btn btn-danger font-weight-bold py-2 px-6" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalCustomScrollable">Add education </a>
-														</div>
-													</div>
-												</div>
-											</div> -->
-										</div>
-										<!--end::Engage Widget 1-->
+										<!--end::Illustration-->
 									</div>
-								</div>
-								<!--end::Card-->
+									<!--end::Card body-->
+							</div>
+								
 								<br>
                                 <br>
                                 <!--begin::Card-->
-										<div class="card card-custom">
-										
-											<div class="card-body col-8 mx-auto"> 
+								<div class="card card-custom">
+										<!--begin::Row-->
+									<div class="row">
+								    	<div class="col-xl-4">
+											<div class="card-body "> 
                                             <div class="d-flex align-items-center bg-light-info rounded p-5 mb-9">
 													<!--begin::Title-->
 													<div class="d-flex flex-column flex-grow-1 mr-2">
@@ -116,6 +98,8 @@
 												
 												</div>
                                             </div>
+										</div>
+									</div>
 										</div>
 										<!--end::Card-->
 							</div>

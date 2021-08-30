@@ -50,35 +50,31 @@
     <div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-								<!--begin::Card-->
-								<div class="card card-custom card-sticky" id="kt_page_sticky_card">
-									<!-- <div class="card-header">
-										<div class="card-title">
-											<h3 class="card-label">Education
-											<i class="mr-2"></i>
+							<div class="card">
+								<!--begin::Card body-->
+								    	<div class="card-body p-0">
+										<!--begin::Wrapper-->
+										<div class="card-px text-center py-10 my-5">
+											<!--begin::Title-->
+											<h2 class="fs-2x fw-bolder mb-10">Welcome!</h2>
+											<!--end::Title-->
+											<!--begin::Description-->
+											<p class="text-gray-400 fs-4 fw-bold mb-10">There are no customers added yet.
+											<br />Kickstart your CRM by adding a your first customer</p>
+											<!--end::Description-->
+											<!--begin::Action-->
+											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_interset">Add interset</a>
+											<!--end::Action-->
 										</div>
-										<div class="card-toolbar">
-											
+										<!--end::Wrapper-->
+										<!--begin::Illustration-->
+										<div class="text-center px-4">
+											<img class="mw-100 h-300px" alt="" src="{{asset('metronic/media/interset.jpg')}}" />
 										</div>
-									</div> -->
-									<div class="card-body">
-									 <!--begin::Engage Widget 1-->
-                                     <div class=" col-8 mx-auto">
-									 <div class="card card-custom card-stretch gutter-b">
-											<div class="card-body d-flex p-0">
-												<div class="flex-grow-1 bg-light-success p-12 pb-40 card-rounded flex-grow-1 bgi-no-repeat" style="background-position: calc(80% + 0.9rem) bottom; background-size: 50% auto; background-image: url({{asset('metronic/media/interset.jpg')}})">
-													<p class="text-success pt-10 pb-5 font-size-h3 font-weight-bolder line-height-lg">Start with a branding
-													<br />site design modern
-													<br />content creation</p>
-													<a href="#" class="btn btn-success font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_interset">Add interset</a>
-												</div>
-											</div>
-										</div>
-										</div>
-										<!--end::Engage Widget 1-->
+										<!--end::Illustration-->
 									</div>
+									<!--end::Card body-->
 								</div>
-								<!--end::Card-->
 								<br>
                                 <br>
                                 <!--begin::Card-->

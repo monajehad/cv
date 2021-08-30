@@ -1,5 +1,7 @@
 <div class="card card-custom">
-											<div class="card-body col-8 mx-auto"> 
+                           <div class="row">
+								    	<div class="col-xl-4">
+											<div class="card-body "> 
                                             <div class="d-flex align-items-center bg-light-info rounded p-5 mb-9">
 													<!--begin::Title-->
 													<div class="d-flex flex-column flex-grow-1 mr-2">
@@ -23,4 +25,6 @@
 												
 												</div>
                                             </div>
-										</div>
+                                        </div>
+                                 </div>
+					</div>
