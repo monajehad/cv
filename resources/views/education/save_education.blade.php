@@ -9,7 +9,7 @@
 																		</button>
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
-																		<div data-scroll="true" data-height="600">
+																		<div data-scroll="true" data-height="450">
 																			<form class="form pt-9 pl-9">
 																			<div class="ps__rail-y" style="top: 165px; right: 0px; height: 600px;"><div class="ps__thumb-y" tabindex="0" style="top: 298px; height: 300px;"></div></div>
 																				<div class="form-group row">
