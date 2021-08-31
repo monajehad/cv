@@ -60,7 +60,7 @@
 																					<div class="col-lg-9 col-xl-6">
 																						  <div class=" input-group-solid"  >
 																						    <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
-																					     	  <div id="kt_quil_1" style="height: 325px; ">Compose a message</div>
+																					     	  <div id="kt_quil_1" style="height: 325px; " name="details">Compose a message</div>
 
 																						   </div>
                                                                                       </div>

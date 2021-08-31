@@ -15,7 +15,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">skill Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="sk_name" placeholder="Skill Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="name" placeholder="Skill Name" />
 																					</div>
 																				</div>
 																				

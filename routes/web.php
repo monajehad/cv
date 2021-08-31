@@ -22,9 +22,6 @@ Route::get('/personalinformation', function(){
     return view('personalinfo.personal');
 })->name('personal');
 
-Route::get('/education', function(){
-    return view('education.eduction');
-})->name('education');
 
 Route::get('/work', function(){
     return view('work.work');
