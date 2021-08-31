@@ -51,3 +51,7 @@ Route::get('/social', function(){
 Route::get('/testimonial', function(){
     return view('testimonials.testimonial');
 })->name('testimonial');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
