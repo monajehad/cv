@@ -16,7 +16,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Place Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="un_name" placeholder="University Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" name="un_name" placeholder="Place Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">

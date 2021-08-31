@@ -76,37 +76,7 @@
             <br>
             <!--begin::Row-->
             <div class="row">
-                <div class="col-xl-6">
-                    <div class="card-body ">
-                        <div class="d-flex align-items-center bg-light-info rounded p-5 mb-9">
-                            <!--begin::Title-->
-                            <div class="d-flex flex-column flex-grow-1 mr-2">
-                                <h3 class="font-weight-bold text-dark-75  font-size-h5 mb-1"> University Name</h3>
-                                <span class="text-muted font-weight-bold">Specialization</span>
-                                <span class="text-muted font-weight-bold">Degree</span>
-                                <div class="font-weight-bold text-success mt-2 mb-5">start - end</div>
-                                <p class="text-dark-75  font-size-lg m-0">Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quaerat voluptates impedit praesentium adipisci necessitatibus
-                                    porro ea a, aliquam quasi sapiente repudiandae iusto harum esse incidunt
-                                    recusandae eveniet nemo, sequi enim!</p>
-                                <!--begin::Lable-->
-
-                                <div class="card-toolbar mt-4 text-right">
-                                    <a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2">
-                                        <i class="flaticon2-rubbish-bin"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-icon btn-light-success mr-2">
-                                        <i class="flaticon2-edit"></i>
-                                    </a>
-
-                                </div>
-                                <!--end::Lable-->
-                            </div>
-                            <!--end::Title-->
-
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-xl-6">
                     <div class="card card-custom gutter-b">
                         <!--begin::Body-->
@@ -136,7 +106,7 @@
                                         <span class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-300"></span>
                                         <span>Specialization</span>
                                     </a>
-
+                   
                                     <div class="d-flex">
                                         <div class="d-flex align-items-center pr-5">
 																<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
@@ -159,7 +129,7 @@
 																</span>
                                             <span class="text-muted font-weight-bold">start date</span>
                                         </div>
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center pr-5">
 																<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
 																	<!--begin::Svg Icon | path:assets/media/svg/icons/Home/Clock.svg-->
 																	<svg xmlns="http://www.w3.org/2000/svg"
@@ -180,74 +150,29 @@
 																</span>
                                             <span class="text-muted font-weight-bold">end date</span>
                                         </div>
-
+										<div class="d-flex align-items-center">
+																<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
+																	<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Sale1.svg-->
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																				<rect x="0" y="0" width="24" height="24"/>
+																				<path d="M16.0322024,5.68722152 L5.75790403,15.945742 C5.12139076,16.5812778 5.12059836,17.6124773 5.75613416,18.2489906 C5.75642891,18.2492858 5.75672377,18.2495809 5.75701875,18.2498759 L5.75701875,18.2498759 C6.39304347,18.8859006 7.42424328,18.8859006 8.060268,18.2498759 C8.06056298,18.2495809 8.06085784,18.2492858 8.0611526,18.2489906 L18.3196731,7.9746922 C18.9505124,7.34288268 18.9501191,6.31942463 18.3187946,5.68810005 L18.3187946,5.68810005 C17.68747,5.05677547 16.6640119,5.05638225 16.0322024,5.68722152 Z" fill="#000000" fill-rule="nonzero"/>
+																				<path d="M9.85714286,6.92857143 C9.85714286,8.54730513 8.5469533,9.85714286 6.93006028,9.85714286 C5.31316726,9.85714286 4,8.54730513 4,6.92857143 C4,5.30983773 5.31316726,4 6.93006028,4 C8.5469533,4 9.85714286,5.30983773 9.85714286,6.92857143 Z M20,17.0714286 C20,18.6901623 18.6898104,20 17.0729174,20 C15.4560244,20 14.1428571,18.6901623 14.1428571,17.0714286 C14.1428571,15.4497247 15.4560244,14.1428571 17.0729174,14.1428571 C18.6898104,14.1428571 20,15.4497247 20,17.0714286 Z" fill="#000000" opacity="0.3"/>
+																			</g>
+																		</svg><!--end::Svg Icon-->
+                                            <span class="text-muted font-weight-bold"> degree</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--end::Info-->
-                                <!--begin::Dropdown-->
-                                <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title=""
-                                     data-placement="left" data-original-title="Quick actions">
-                                    <a href="#" class="btn btn-hover-light-primary btn-sm btn-icon"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ki ki-bold-more-hor"></i>
-                                    </a>
-                                    <div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover">
-                                            <li class="navi-header font-weight-bold py-4">
-                                                <span class="font-size-lg">Choose Label:</span>
-                                                <i class="flaticon2-information icon-md text-muted"
-                                                   data-toggle="tooltip" data-placement="right" title=""
-                                                   data-original-title="Click to learn more..."></i>
-                                            </li>
-                                            <li class="navi-separator mb-3 opacity-70"></li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-success">Customer</span>
-																		</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-danger">Partner</span>
-																		</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-warning">Suplier</span>
-																		</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-primary">Member</span>
-																		</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-dark">Staff</span>
-																		</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-separator mt-3 opacity-70"></li>
-                                            <li class="navi-footer py-4">
-                                                <a class="btn btn-clean font-weight-bold btn-sm" href="#">
-                                                    <i class="ki ki-plus icon-sm"></i>
-                                                    Add new
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
-                                </div>
-                                <!--end::Dropdown-->
+								<div class=" ml-2"  title="Quick actions" data-placement="left">
+							                        	<span class="switch switch-icon">
+																<label>
+																	<input type="checkbox" checked="checked" name="select" />
+																	<span></span>
+																</label>
+															</span>
+								</div>
                             </div>
                             <!--end::Top-->
                             <!--begin::Bottom-->
@@ -257,31 +182,21 @@
                                     honest. They stop you from indulging in poorly thought-out metaphors about driving
                                     and keep you focused on the overall structure of your post</p>
                                 <!--end::Text-->
-                                <!--begin::Username-->
-                                <span class="text-dark-75 font-size-lg font-weight-normal">Mr. Liam</span>
-                                <!--end::Username-->
+                               
                                 <!--begin::Action-->
                                 <div class="pt-5">
-                                    <a href="#"
-                                       class="btn btn-hover-text-primary btn-hover-icon-primary btn-sm btn-text-dark-50 bg-hover-light-primary rounded font-weight-bolder font-size-sm p-2">
-														<span class="svg-icon svg-icon-md svg-icon-dark-25 pr-2">
-															<!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group-chat.svg-->
-															<svg xmlns="http://www.w3.org/2000/svg"
-                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                 height="24px" viewBox="0 0 24 24" version="1.1">
-																<g stroke="none" stroke-width="1" fill="none"
-                                                                   fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24"></rect>
-																	<path d="M16,15.6315789 L16,12 C16,10.3431458 14.6568542,9 13,9 L6.16183229,9 L6.16183229,5.52631579 C6.16183229,4.13107011 7.29290239,3 8.68814808,3 L20.4776218,3 C21.8728674,3 23.0039375,4.13107011 23.0039375,5.52631579 L23.0039375,13.1052632 L23.0206157,17.786793 C23.0215995,18.0629336 22.7985408,18.2875874 22.5224001,18.2885711 C22.3891754,18.2890457 22.2612702,18.2363324 22.1670655,18.1421277 L19.6565168,15.6315789 L16,15.6315789 Z"
-                                                                          fill="#000000"></path>
-																	<path d="M1.98505595,18 L1.98505595,13 C1.98505595,11.8954305 2.88048645,11 3.98505595,11 L11.9850559,11 C13.0896254,11 13.9850559,11.8954305 13.9850559,13 L13.9850559,18 C13.9850559,19.1045695 13.0896254,20 11.9850559,20 L4.10078614,20 L2.85693427,21.1905292 C2.65744295,21.3814685 2.34093638,21.3745358 2.14999706,21.1750444 C2.06092565,21.0819836 2.01120804,20.958136 2.01120804,20.8293182 L2.01120804,18.32426 C1.99400175,18.2187196 1.98505595,18.1104045 1.98505595,18 Z M6.5,14 C6.22385763,14 6,14.2238576 6,14.5 C6,14.7761424 6.22385763,15 6.5,15 L11.5,15 C11.7761424,15 12,14.7761424 12,14.5 C12,14.2238576 11.7761424,14 11.5,14 L6.5,14 Z M9.5,16 C9.22385763,16 9,16.2238576 9,16.5 C9,16.7761424 9.22385763,17 9.5,17 L11.5,17 C11.7761424,17 12,16.7761424 12,16.5 C12,16.2238576 11.7761424,16 11.5,16 L9.5,16 Z"
-                                                                          fill="#000000" opacity="0.3"></path>
-																</g>
-															</svg>
-                                                            <!--end::Svg Icon-->
-														</span>
-                                        107 Comments
+                                    <!--begin::Lable-->
+
+							   <div class="card-toolbar mt-4 text-right">
+                                    <a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2">
+                                        <i class="flaticon2-rubbish-bin"></i>
                                     </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-light-success mr-2">
+                                        <i class="flaticon2-edit"></i>
+                                    </a>
+
+                                </div>
+                                <!--end::Lable-->
                                 </div>
                                 <!--end::Action-->
                             </div>
