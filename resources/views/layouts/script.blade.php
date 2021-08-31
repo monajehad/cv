@@ -20,6 +20,7 @@
 		<script src="{{asset('metronic/js/pages/crud/forms/editors/quill.js')}}"></script>
 
 
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 		<script src="{{asset('js/helper/aside_menu_mark.js')}}"></script>
 		<script src="{{asset('js/helper/block_ui.js')}}"></script>

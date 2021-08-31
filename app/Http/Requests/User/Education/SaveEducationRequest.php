@@ -30,8 +30,7 @@ class SaveEducationRequest extends FormRequest
             'place_name' => 'nullable|string|max:200|min:3',
             'specialization' => 'required|string|max:200|min:3',
             'degree' => 'required',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date',
+            'date' => 'required',
             'details' => 'nullable|string|max:500|min:50',
         ];
 

@@ -29,7 +29,7 @@
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
                 <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm" aria-haspopup="true"
-                   aria-expanded="false" data-toggle="modal" data-target="#add_new_education">Add education
+                   aria-expanded="false" data-toggle="modal" data-target="#save_education_modal">Add education
                 </a>
             </div>
         </div>
@@ -58,7 +58,7 @@
                         <!--end::Description-->
                         <!--begin::Action-->
                         <a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false"
-                           data-toggle="modal" data-target="#add_new_education">Add education
+                           data-toggle="modal" data-target="#save_education_modal">Add education
                         </a>
                         <!--end::Action-->
                     </div>
@@ -89,6 +89,7 @@
 @section('script')
 
     <script src="{{asset('js/blades/user/education/index.js')}}"></script>
+    <script src="{{asset('js/blades/user/education/save_education.js')}}"></script>
 
 
 @endsection

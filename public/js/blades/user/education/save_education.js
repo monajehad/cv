@@ -1,25 +1,26 @@
-let AddNoteToHistoryformHtml = $("#add_note_to_history_form");
-AddNoteToHistoryformHtml.validate({
+let SaveEducationFormHtml = $("#save_education_form");
+SaveEducationFormHtml.validate({
     rules: {
 
-        // "comment": {required: true},
+        // "place_name": {required: true},
+        // "sepcialization": {required: true},
     },
     
     submitHandler: function (form) {
 
-        saveNoteToHistory(form);
+        saveEducation(form);
         return false;
     }
 });
 
 
-function saveNoteToHistory(form) {
+function saveEducation(form) {
     let form_data = new FormData(form);
-    let orderHistoryContainer = $(`#order_history_container`);
+    let educationContainer = $(`#education_container`);
 
     $.ajax({
-        url:  AddNoteToHistoryformHtml.attr('action'),
-        type: AddNoteToHistoryformHtml.attr('method'),
+        url:  SaveEducationFormHtml.attr('action'),
+        type: SaveEducationFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -35,9 +36,9 @@ function saveNoteToHistory(form) {
         },
         success: function (result) {
             if (result.status) {
-                let history_record = result.data.history_record;
+                let education = result.data.education;
 
-                orderHistoryContainer.prepend(history_record.history_card);
+                educationContainer.prepend(education.history_card);
                 toastr.success(result.message);
             } else {
                 toastr.error(result.message);

@@ -17,7 +17,7 @@ var KTBootstrapDaterangepicker = function () {
             applyClass: 'btn-primary',
             cancelClass: 'btn-secondary'
         }, function(start, end, label) {
-            $('#kt_daterangepicker_2 .form-control').val( start.format('YYYY-MM-DD') + ' / ' + end.format('YYYY-MM-DD'));
+            $('#kt_daterangepicker_2 .form-control').val( start.format('YYYY-MM-DD') + ' | ' + end.format('YYYY-MM-DD'));
         });
 
          $('#kt_daterangepicker_2_modal').daterangepicker({
