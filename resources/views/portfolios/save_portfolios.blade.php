@@ -9,7 +9,7 @@
 																		</button>
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
-																		<div data-scroll="true" data-height="600">
+																		<div data-scroll="true" data-height="500">
 																			<form class="form pt-9 pl-9">
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Portfolios Name <span style="color:red;font-size: large;">*</span>

@@ -89,6 +89,7 @@
 																<label>
 																	<input type="checkbox" class="activate_education_switch"
                                                                            {{$education->is_active ? 'checked' : ''}}
+                                                                           name="select" />  {{$education->is_active ? 'checked' : ''}}
                                                                            name="select" />
 																	<span></span>
 																</label>
