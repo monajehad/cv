@@ -1,5 +1,5 @@
-let SaveEducationFormHtml = $("#save_education_form");
-SaveEducationFormHtml.validate({
+let SaveWorkFormHtml = $("#save_work_form");
+SaveWorkFormHtml.validate({
     rules: {
 
         // "place_name": {required: true},
@@ -8,19 +8,19 @@ SaveEducationFormHtml.validate({
     
     submitHandler: function (form) {
 
-        saveEducation(form);
+        saveWork(form);
         return false;
     }
 });
 
 
-function saveEducation(form) {
+function saveWork(form) {
     let form_data = new FormData(form);
-    let educationContainer = $(`#education_container`);
+    let workContainer = $(`#work_container`);
 
     $.ajax({
-        url:  SaveEducationFormHtml.attr('action'),
-        type: SaveEducationFormHtml.attr('method'),
+        url = baseUrl + '/user/work/save',  
+        type: Post,
         cache: false,
         contentType: false,
         processData: false,
@@ -36,9 +36,9 @@ function saveEducation(form) {
         },
         success: function (result) {
             if (result.status) {
-                let education = result.data.education;
+                let work = result.data.work;
 
-                educationContainer.prepend(education.history_card);
+                workContainer.prepend(work.work_card);
                 toastr.success(result.message);
             } else {
                 toastr.error(result.message);

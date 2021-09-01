@@ -22,9 +22,9 @@ Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
     //work
     Route::get('/work/index' , [WorkController::class , 'index'])->name('user.work.index');
     Route::post('/work/save' , [WorkController::class , 'save'])->name('user.work.save');
-    Route::post('/work/update' , [WorkController::class , 'update'])->name('user.work.update');
-    Route::post('/work/delete' , [WorkController::class , 'delete'])->name('user.work.delete');
-    Route::post('/work/status/update' , [WorkController::class , 'updateStatus'])->name('user.work.updateStatus');
+    // Route::post('/work/update' , [WorkController::class , 'update'])->name('user.work.update');
+    // Route::post('/work/delete' , [WorkController::class , 'delete'])->name('user.work.delete');
+    // Route::post('/work/status/update' , [WorkController::class , 'updateStatus'])->name('user.work.updateStatus');
 
 
 

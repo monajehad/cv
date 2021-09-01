@@ -23,9 +23,9 @@ Route::get('/personalinformation', function(){
 })->name('personal');
 
 
-Route::get('/work', function(){
-    return view('work.work');
-})->name('work');
+// Route::get('/work', function(){
+//     return view('work.work');
+// })->name('work');
 
 Route::get('/interset', function(){
     return view('interset.interset');

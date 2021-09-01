@@ -10,7 +10,8 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
-																			<form class="form pt-9 pl-9" id="save_education_form">
+																			<form class="form pt-9 pl-9" id="save_work_form" >
+                                                                               @csrf 
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Company Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
@@ -57,7 +58,7 @@
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cancel</button>
-																		<button type="button" form="save_education_form" class="btn btn-primary font-weight-bold">Save</button>
+																		<button type="button" form="save_work_form" class="btn btn-primary font-weight-bold">Save</button>
 																	</div>
 																</div>
 															</div>

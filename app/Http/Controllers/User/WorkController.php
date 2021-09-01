@@ -31,15 +31,15 @@ class WorkController extends Controller
         dd($inputs);
         if($request->work_id)
         {
-            $education = Work::findOrFail($request->work_id);
-            $education->update($inputs);
+            $work = Work::findOrFail($request->work_id);
+            $work->update($inputs);
         }
         else
         {
-            $education = Work::create($inputs);
+            $work = Work::create($inputs);
         }
-        $education->append('work_card');
-        return sendResponse(true, 'work saved successfully',  $education, 200);
+        $work->append('work_card');
+        return sendResponse(true, 'work saved successfully',  $work, 200);
     }
 
   

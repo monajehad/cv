@@ -4,10 +4,11 @@
 						<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
-								<li class="menu-item menu-item-active" aria-haspopup="true">
+								
+								<li class="menu-item menu-item" aria-haspopup="true">
 									<a href="index.html" class="menu-link">
 										<span class="svg-icon menu-icon">
-											<!--begin::Svg Icon | path:{{asset('metronic/media/svg/icons/Design/Layers.svg-->
+											<!--begin::Svg Icon | path:{{asset('metronic/media/svg/icons/Design/Layers.svg')}}-->
 											<svg xmlns="http://www.w3.org/2000.svg')}}" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 													<polygon points="0 0 24 0 24 24 0 24" />
@@ -20,11 +21,7 @@
 										<span class="menu-text">Dashboard</span>
 									</a>
 								</li>
-								<li class="menu-section">
-									<h4 class="menu-text">Custom</h4>
-									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('personal')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
                                         <!-- <span class="svg-icon svg-icon-primary svg-icon-2x"> -->
@@ -42,7 +39,7 @@
 										<span class="menu-text">Personal information</span>
 									</a>
 								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 										<a href="{{route('user.education.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Design\Layers.svg-->
@@ -61,8 +58,8 @@
 								</li>
 							
 									
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-										<a href="{{route('work')}}" class="menu-link menu-toggle">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
+										<a href="{{route('user.work.index')}}" class="menu-link menu-toggle">
 											<span class="svg-icon menu-icon"><!--begin::Svg Icon | path:{{asset('metronic/media/svg/icons\General\Settings-2.svg')}}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -76,7 +73,7 @@
 									<!-- <i class="menu-arrow"></i> -->
 										</a>
 								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('course')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<span class="flaticon-presentation-1 icon-lg "></span>
@@ -87,7 +84,7 @@
 									<!-- <i class="menu-arrow"></i> -->
 									</a>
 								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('skill')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon ">
 											<span class="flaticon2-user-1 icon-lg"></span>
@@ -99,7 +96,7 @@
 									</a>
 								</li>
 									
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 										<a href="{{route('interset')}}" class="menu-link menu-toggle">
 											<span class="svg-icon menu-icon">
 																<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Devices\Midi.svg-->
@@ -121,7 +118,7 @@
 									<!-- <i class="menu-arrow"></i> -->
 										</a>
 								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('portfolios')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon ">
 											<span class="flaticon-list icon-lg"></span>
@@ -132,7 +129,7 @@
 									<!-- <i class="menu-arrow"></i> -->
 									</a>
 								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('social')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 										  <span class="flaticon-earth-globe icon-lg "></span>
@@ -144,7 +141,7 @@
 									</a>
 								</li>
 
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{route('testimonial')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 										  <span class="flaticon2-hangouts-logo icon-lg "></span>

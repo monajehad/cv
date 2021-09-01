@@ -11,10 +11,10 @@ $(document).ready(function () {
 });
 
 function refreshWork() {
-    let educationContainer = $(`#work_container`);
+    let workContainer = $(`#work_container`);
 
     let URL = baseUrl + `/user/work/index`;
-    educationContainer.empty();
+    workContainer.empty();
 
     $.ajax({
         url: URL,
