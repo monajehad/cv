@@ -69,8 +69,9 @@
                                             <i class="la la-calendar-check-o"></i>
                                         </span>
                                     </div>
-                                    <span class="text-danger lev"></span>
+
                                 </div>
+                                <span class="text-danger lev"></span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -78,7 +79,7 @@
                             <div class="col-lg-9 col-xl-6">
                                 <div class=" input-group-solid">
                                     <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
-                                    <div name="details" id="kt_quil_1" style="height: 325px;" >Compose a message</div>
+                                    <div name="details" id="kt_quil_1" style="height: 200px;" >Compose a message</div>
                                     <span class="text-danger lev"></span>
                                 </div>
                             </div>

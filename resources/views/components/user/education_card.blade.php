@@ -79,7 +79,7 @@
         <path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z" fill="#000000"/>
     </g>
 </svg><!--end::Svg Icon--></span>
-                                            <span class="text-muted font-weight-bold"> {{$education->degree}}</span>
+                            <span class="text-muted font-weight-bold"> {{$education->degree}}</span>
                         </div>
                     </div>
                 </div>
@@ -87,9 +87,8 @@
                 <div class=" ml-2"  title="Quick actions" data-placement="left">
 							                        	<span class="switch switch-icon">
 																<label>
-																	<input type="checkbox" class="activate_education_switch"
+																	<input type="checkbox" class="activate_education_switch" onclick="updateStatus('is_active',this.checked,'{{$education->id}}')"
                                                                            {{$education->is_active ? 'checked' : ''}}
-                                                                           name="select" />  {{$education->is_active ? 'checked' : ''}}
                                                                            name="select" />
 																	<span></span>
 																</label>

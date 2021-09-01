@@ -48,3 +48,36 @@ function refreshEducation() {
 
 }
 
+
+updateStatus = function (key, status, id) {
+
+    $.ajax({
+        url: baseUrl + "/user/education/status/update",
+        type: "post",
+        data: {
+            'status': status,
+            'id': id,
+            'key': key,
+        },
+        error: function (jqXHR, error, errorThrown) {
+            if (jqXHR.responseJSON) {
+                let errors = jqXHR.responseJSON.errors;
+                swalException();
+
+            } else {
+
+                swalException();
+            }
+        },
+        success: function (result) {
+            if (result.status) {
+                toastr.success(result.message);
+            } else {
+                toastr.error(result.message);
+            }
+        },
+        complete: function () {
+        }
+    });
+};
+

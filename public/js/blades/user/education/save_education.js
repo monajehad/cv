@@ -1,9 +1,8 @@
 let SaveEducationFormHtml = $("#save_education_form");
 SaveEducationFormHtml.validate({
     rules: {
-
-        // "place_name": {required: true},
-        // "sepcialization": {required: true},
+        "place_name": {required: true},
+        "sepcialization": {required: true},
     },
     
     submitHandler: function (form) {
@@ -36,9 +35,10 @@ function saveEducation(form) {
         },
         success: function (result) {
             if (result.status) {
+                $('#save_education_modal').modal('hide');
                 let education = result.data.education;
 
-                educationContainer.prepend(education.history_card);
+                educationContainer.prepend(education.education_card);
                 toastr.success(result.message);
             } else {
                 toastr.error(result.message);

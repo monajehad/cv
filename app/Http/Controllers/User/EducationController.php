@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Education\SaveEducationRequest;
 use App\Models\Education;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class EducationController extends Controller
 {
@@ -20,7 +20,7 @@ class EducationController extends Controller
             {
                 $education->append('education_card');
             }
-            return sendResponse(true,null,get_defined_vars(),200);
+            return sendResponse(true , null , get_defined_vars() , 200);
         }
 
         return view('education.eduction');
@@ -29,36 +29,43 @@ class EducationController extends Controller
     public function save(SaveEducationRequest $request)
     {
         $inputs = $request->all();
+
+        $date = explode(' | ' , $request->date);
+        $start_date = $date[0];
+        $end_date = $date[1];
+        $inputs['start_date'] = $start_date;
+        $inputs['end_date'] = $end_date;
         dd($inputs);
-        if($request->education_id)
+        if ($request->education_id)
         {
             $education = Education::findOrFail($request->education_id);
             $education->update($inputs);
-        }
-        else
+        } else
         {
-            $education = Education::create($inputs);
+            // #ToDo :: on mona device $user_id = auth()->user()->id;
+            $education = Education::create(
+                array_merge(['user_id' => 1] , $inputs)
+            );
         }
         $education->append('education_card');
-        return sendResponse(true, 'education saved successfully',  $education, 200);
+        return sendResponse(true , 'education saved successfully' , compact('education') , 200);
     }
 
     public function updateStatus(Request $request)
     {
         $data = Education::findOrFail($request->id);
-        $data[$request->key] = $request->status ;
+        $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
-        return sendResponse(true, "Status changed successfully", null , 200);
+        return sendResponse(true , "Status changed successfully" , null , 200);
     }
 
 
-    public function delete(Request $request){
+    public function delete(Request $request)
+    {
 
         $data = Education::findOrFail($request->id)->delete();
-        return sendResponse(true, "Education deleted successfully", $data , 200);
+        return sendResponse(true , "Education deleted successfully" , $data , 200);
     }
-
-
 
 
 }
