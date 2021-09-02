@@ -54,7 +54,7 @@ function saveCourse(form) {
 }
 
 
-$(document).on('click','#add_course_btn',function (){
+$(document).on('click','.add_course_btn',function (){
     resetForm('save_course_form');
     $('#course_id').val(0);
 });

@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
+									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm add_course_btn"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
                             </div>
                             </div>
                           
@@ -56,7 +56,7 @@
 											<br />Kickstart your CRM by adding a your first customer</p>
 											<!--end::Description-->
 											<!--begin::Action-->
-											<a href="#" id="add_course_btn" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
+											<a href="#"  class="btn btn-primary add_course_btn" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
 											<!--end::Action-->
 										</div>
 										<!--end::Wrapper-->
