@@ -2,8 +2,8 @@ let SaveWorkFormHtml = $("#save_work_form");
 SaveWorkFormHtml.validate({
     rules: {
 
-        // "place_name": {required: true},
-        // "sepcialization": {required: true},
+        "company_name": {required: true},
+         "job_title": {required: true},
     },
     
     submitHandler: function (form) {
@@ -19,8 +19,8 @@ function saveWork(form) {
     let workContainer = $(`#work_container`);
 
     $.ajax({
-        url = baseUrl + '/user/work/save',  
-        type: Post,
+        url:  SaveWorkFormHtml.attr('action'),
+        type: SaveWorkFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -36,6 +36,7 @@ function saveWork(form) {
         },
         success: function (result) {
             if (result.status) {
+                $('#save_work_modal').modal('hide');
                 let work = result.data.work;
 
                 workContainer.prepend(work.work_card);
@@ -48,6 +49,7 @@ function saveWork(form) {
         }
     });
 }
+
 
 
 

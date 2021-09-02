@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\Education\SaveWorkRequest;
-use App\Models\Work;
+use App\Http\Requests\User\Work\SaveWorkRequest;
+use App\Models\Works;
 use Illuminate\Http\Client\Request;
 
 class WorkController extends Controller
@@ -14,8 +14,8 @@ class WorkController extends Controller
     {
         if (request()->expectsJson())
         {
-            $work = Work::all();
-            foreach ($work as $work)
+            $works = Works::all();
+            foreach ($works as $work)
             {
                 $work->append('work_card');
             }
@@ -28,21 +28,42 @@ class WorkController extends Controller
     public function save(SaveWorkRequest $request)
     {
         $inputs = $request->all();
-        dd($inputs);
-        if($request->work_id)
+
+        $date = explode(' | ' , $request->date);
+        $start_date = $date[0];
+        $end_date = $date[1];
+        $inputs['start_date'] = $start_date;
+        $inputs['end_date'] = $end_date;
+       // dd($inputs);
+        if ($request->work_id)
         {
-            $work = Work::findOrFail($request->work_id);
+            $work = Works::findOrFail($request->work_id);
             $work->update($inputs);
-        }
-        else
+        } else
         {
-            $work = Work::create($inputs);
+            // #ToDo :: on mona device $user_id = auth()->user()->id;
+            $work = Works::create(
+                array_merge(['user_id' => 1] , $inputs)
+            );
         }
         $work->append('work_card');
-        return sendResponse(true, 'work saved successfully',  $work, 200);
+        return sendResponse(true , 'work saved successfully' , compact('work') , 200);
     }
 
-  
+    public function updateStatus(Request $request)
+    {
+        $data = Works::findOrFail($request->id);
+        $data[$request->key] = $request->status ? 1 : 0;
+        $data->save();
+        return sendResponse(true , "Status changed successfully" , null , 200);
+    }
+
+    public function delete(Request $request)
+    {
+
+        $data = Works::findOrFail($request->id)->delete();
+        return sendResponse(true , "Work deleted successfully" , $data , 200);
+    }
 
 
 

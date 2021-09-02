@@ -31,9 +31,9 @@ Route::get('/interset', function(){
     return view('interset.interset');
 })->name('interset');
 
-Route::get('/course', function(){
-    return view('course.course');
-})->name('course');
+// Route::get('/course', function(){
+//     return view('course.course');
+// })->name('course');
 
 Route::get('/skill', function(){
     return view('skill.skill');

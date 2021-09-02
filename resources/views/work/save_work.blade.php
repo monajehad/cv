@@ -1,5 +1,5 @@
 <!--begin::Modal Content-->
-<div class="modal fade" id="add_new_work" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+<div class="modal fade" id="save_work_modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
 																<div class="modal-content">
 																	<div class="modal-header">
@@ -10,8 +10,10 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
-																			<form class="form pt-9 pl-9" id="save_work_form" >
+																			<form class="form pt-9 pl-9" id="save_work_form"  method="POST" action="{{route('user.work.save')}}">
                                                                                @csrf 
+																			   <input name="work_id" id="work_id" type="hidden">
+
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Company Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
@@ -58,7 +60,7 @@
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cancel</button>
-																		<button type="button" form="save_work_form" class="btn btn-primary font-weight-bold">Save</button>
+																		<button type="submit" form="save_work_form" class="btn btn-primary font-weight-bold">Save</button>
 																	</div>
 																</div>
 															</div>

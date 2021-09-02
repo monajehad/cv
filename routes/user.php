@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\EducationController;
 use App\Http\Controllers\User\WorkController;
+use App\Http\Controllers\User\CourseController;
 
 
 
@@ -23,11 +24,16 @@ Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
     Route::get('/work/index' , [WorkController::class , 'index'])->name('user.work.index');
     Route::post('/work/save' , [WorkController::class , 'save'])->name('user.work.save');
     // Route::post('/work/update' , [WorkController::class , 'update'])->name('user.work.update');
-    // Route::post('/work/delete' , [WorkController::class , 'delete'])->name('user.work.delete');
-    // Route::post('/work/status/update' , [WorkController::class , 'updateStatus'])->name('user.work.updateStatus');
+     Route::post('/work/delete' , [WorkController::class , 'delete'])->name('user.work.delete');
+    Route::post('/work/status/update' , [WorkController::class , 'updateStatus'])->name('user.work.updateStatus');
 
+  //course
 
-
+ Route::get('/course/index' , [CourseController::class , 'index'])->name('user.course.index');
+    Route::post('/course/save' , [CourseController::class , 'save'])->name('user.course.save');
+     Route::post('/course/update' , [CourseController::class , 'update'])->name('user.course.update');
+     Route::post('/course/delete' , [CourseController::class , 'delete'])->name('user.course.delete');
+    Route::post('/course/status/update' , [CourseController::class , 'updateStatus'])->name('user.course.updateStatus');
 
 });
 

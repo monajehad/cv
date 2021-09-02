@@ -74,7 +74,7 @@
 										</a>
 								</li>
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('course')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.course.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<span class="flaticon-presentation-1 icon-lg "></span>
 

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Works extends Model
 {
     protected $fillable = [
-        'name','source','hours','start_date',
+        'company_name','job_title','start_date',
         'end_date','details','is_active','user_id',
     ];
 
@@ -15,6 +15,11 @@ class Course extends Model
     {
         $this->belongsTo(User::class);
     }
-
+    public function getWorkonCardAttribute()
+    {
+        return view('components.user.work_card', [
+            'work' => $this,
+        ])->render();
+    }
    
 }

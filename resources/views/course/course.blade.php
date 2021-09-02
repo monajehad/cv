@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_course">Add course</a>
+									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
                             </div>
                             </div>
                           
@@ -39,8 +39,10 @@
 @section('content')
 	<!--begin::Entry-->
     <div class="d-flex flex-column-fluid">
+
 							<!--begin::Container-->
 							<div class="container">
+							  @if($courses )
 				     			<div class="card">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
@@ -54,7 +56,7 @@
 											<br />Kickstart your CRM by adding a your first customer</p>
 											<!--end::Description-->
 											<!--begin::Action-->
-											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_course">Add course</a>
+											<a href="#" id="add_course_btn" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_course_modal">Add course</a>
 											<!--end::Action-->
 										</div>
 										<!--end::Wrapper-->
@@ -65,12 +67,13 @@
 										<!--end::Illustration-->
 									</div>
 									<!--end::Card body-->
-								</div>
+								 </div>
+							  
+							  @else
 								
-								<br>
-                                <br>
                                 <!--begin::Card-->
-									<div class="row">
+									<div class="row" id="course_container">
+								@foreach($courses as $course)
 									<div class="col-xl-6">
 									<div class="card card-custom gutter-b">
 										<!--begin::Body-->
@@ -96,7 +99,7 @@
 													<a href="javascript:"
 													class="text-dark-75 text-hover-primary mb-1 font-size-lg font-weight-bolder">
 
-														<span>course_name</span>
+														<span>{{$course->course_name}} </span>
 													</a>
 
 													<div class="d-flex">
@@ -119,7 +122,7 @@
 																									</svg>
 																									<!--end::Svg Icon-->
 																								</span>
-															<span class="text-muted font-weight-bold">start_date</span>
+															<span class="text-muted font-weight-bold">{{$course->start_date}} </span>
 														</div>
 														<div class="d-flex align-items-center pr-5">
 																								<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
@@ -140,7 +143,7 @@
 																									</svg>
 																									<!--end::Svg Icon-->
 																								</span>
-															<span class="text-muted font-weight-bold">end_date</span>
+															<span class="text-muted font-weight-bold">{{$course->end_date}} </span>
 														</div>
 														<div class="d-flex align-items-center">
 																							<span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Files\File-done.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -150,7 +153,7 @@
 																									<path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z" fill="#000000"/>
 																								</g>
 																							</svg><!--end::Svg Icon--></span>
-																			<span class="text-muted font-weight-bold">source</span>
+																			<span class="text-muted font-weight-bold">{{$course->source}}</span>
 														</div>
 													</div>
 												</div>
@@ -158,9 +161,9 @@
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
-																									<input type="checkbox" class="activate_education_switch"
-																										
-																										name="select" />
+																									<input type="checkbox" class="activate_course_switch"onclick="updateStatus('is_active',this.checked,'{{$course->id}}')"
+                                                                                                        {{$education->is_active ? 'checked' : ''}}
+                                                                                                        name="is_active" />
 																									<span></span>
 																								</label>
 																							</span>
@@ -170,7 +173,7 @@
 											<!--begin::Bottom-->
 											<div class="pt-3">
 												<!--begin::Text-->
-												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod minima ad quibusdam explicabo nam laudantium unde tempora, dignissimos, minus consequuntur magni qui omnis labore sunt aliquam sint eum cupiditate iusto.</p>
+												<p class="text-dark-75 font-size-lg font-weight-normal pt-5"{{$course->details}}></p>
 												<!--end::Text-->
 
 												<!--begin::Action-->
@@ -196,7 +199,9 @@
 										<!--end::Body-->
 									</div>
 								</div>
+						   @endforeach
 																	</div>
+					@endif
 							</div>
 							<!--end::Container-->
 						</div>
@@ -206,6 +211,7 @@
 @include('course.save_course')
 @endsection
 @section('script')
+<script src="{{asset('js/blades/user/course/save_course.js')}}"></script>
 
 
 

@@ -1,5 +1,5 @@
 <!--begin::Modal Content-->
-<div class="modal fade" id="add_new_course" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+<div class="modal fade" id="save_course_modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
 																<div class="modal-content">
 																	<div class="modal-header">
@@ -10,7 +10,9 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
-																			<form class="form pt-9 pl-9">
+																			<form class="form pt-9 pl-9" id="save_course_form">
+																			<input name="course_id" value="0" id="course_id" type="hidden">
+                                                                                      @csrf
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Course Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
@@ -62,7 +64,7 @@
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cancel</button>
-																		<button type="button" class="btn btn-primary font-weight-bold">Save</button>
+																		<button type="submit" form="save_course_form" class="btn btn-primary font-weight-bold">Save</button>
 																	</div>
 																</div>
 															</div>

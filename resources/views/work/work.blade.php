@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_work">Add work</a>
+									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_work_modal">Add work</a>
                             </div>
                             </div>
                           
@@ -61,7 +61,7 @@
 											<br />Kickstart your CRM by adding a your first customer</p>
 											<!--end::Description-->
 											<!--begin::Action-->
-											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_work">Add work</a>
+											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_work_modal">Add work</a>
 											<!--end::Action-->
 										</div>
 										<!--end::Wrapper-->
@@ -89,10 +89,10 @@
 
 
 
-    
-    <script>
-         new KTAvatar('kt_user_avatar_1');
-    </script>
+  
+<script src="{{asset('js/blades/user/work/index.js')}}"></script>
+    <script src="{{asset('js/blades/user/work/save_work.js')}}"></script>
+  
 
 @endsection
 

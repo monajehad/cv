@@ -81,9 +81,9 @@
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
-																									<input type="checkbox" class="activate_education_switch"
+																									<input type="checkbox" class="activate_work_switch" onclick="updateStatus('is_active',this.checked,'{{$work->id}}')"
                                                                                                     {{$work->is_active ? 'checked' : ''}}
-																										name="select" />
+																										name="is_active" />
 																									<span></span>
 																								</label>
 																							</span>
@@ -101,10 +101,11 @@
 													<!--begin::Lable-->
 
 													<div class="card-toolbar mt-1 text-right">
-														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_work_btn"
+														onclick="remove('{{$work->id}}','user/work/delete')">
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
-														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn" >
 															<i class="flaticon2-edit"></i>
 														</a>
 
