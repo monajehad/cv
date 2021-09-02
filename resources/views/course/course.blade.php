@@ -42,7 +42,7 @@
 
 							<!--begin::Container-->
 							<div class="container">
-							  @if($courses )
+							  @if($courses == null )
 				     			<div class="card">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
@@ -99,10 +99,10 @@
 													<a href="javascript:"
 													class="text-dark-75 text-hover-primary mb-1 font-size-lg font-weight-bolder">
 
-														<span>{{$course->course_name}} </span>
+														<span>{{$course->name}} </span>
 													</a>
 
-													<div class="d-flex">
+													<div class="d-flex ">
 														<div class="d-flex align-items-center pr-5">
 																								<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
 																									<!--begin::Svg Icon | path:assets/media/svg/icons/Home/Clock.svg-->
@@ -124,7 +124,7 @@
 																								</span>
 															<span class="text-muted font-weight-bold">{{$course->start_date}} </span>
 														</div>
-														<div class="d-flex align-items-center pr-5">
+														<div class="d-flex align-items-center">
 																								<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
 																									<!--begin::Svg Icon | path:assets/media/svg/icons/Home/Clock.svg-->
 																									<svg xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +145,24 @@
 																								</span>
 															<span class="text-muted font-weight-bold">{{$course->end_date}} </span>
 														</div>
-														<div class="d-flex align-items-center">
-																							<span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Files\File-done.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+													
+
+													</div>
+												<div class="d-flex">
+												<div class="d-flex align-items-center pr-5">
+																							<span class="svg-icon svg-icon-md svg-icon-primary pr-1"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Devices\Watch2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																									<rect x="0" y="0" width="24" height="24"/>
+																									<path d="M9,17 L15,17 L15,20.5 C15,21.3284271 14.3284271,22 13.5,22 L10.5,22 C9.67157288,22 9,21.3284271 9,20.5 L9,17 Z" fill="#000000" opacity="0.3"/>
+																									<path d="M12,17 C14.7614237,17 17,14.7614237 17,12 C17,9.23857625 14.7614237,7 12,7 C9.23857625,7 7,9.23857625 7,12 C7,14.7614237 9.23857625,17 12,17 Z" fill="#000000" opacity="0.3"/>
+																									<path d="M10.5,2 L13.5,2 C14.3284271,2 15,2.67157288 15,3.5 L15,7 L9,7 L9,3.5 C9,2.67157288 9.67157288,2 10.5,2 Z" fill="#000000" opacity="0.3"/>
+																									<path d="M12,17 C14.7614237,17 17,14.7614237 17,12 C17,9.23857625 14.7614237,7 12,7 C9.23857625,7 7,9.23857625 7,12 C7,14.7614237 9.23857625,17 12,17 Z M12,19 C8.13400675,19 5,15.8659932 5,12 C5,8.13400675 8.13400675,5 12,5 C15.8659932,5 19,8.13400675 19,12 C19,15.8659932 15.8659932,19 12,19 Z" fill="#000000" fill-rule="nonzero"/>
+																								</g>
+																							</svg><!--end::Svg Icon--></span>
+																			<span class="text-muted font-weight-bold">{{$course->hours}} h</span>
+														</div>
+													<div class="d-flex align-items-center">
+																							<span class="svg-icon svg-icon-md svg-icon-primary pr-1"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Files\File-done.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 																								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 																									<polygon points="0 0 24 0 24 24 0 24"/>
 																									<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z M10.875,15.75 C11.1145833,15.75 11.3541667,15.6541667 11.5458333,15.4625 L15.3791667,11.6291667 C15.7625,11.2458333 15.7625,10.6708333 15.3791667,10.2875 C14.9958333,9.90416667 14.4208333,9.90416667 14.0375,10.2875 L10.875,13.45 L9.62916667,12.2041667 C9.29375,11.8208333 8.67083333,11.8208333 8.2875,12.2041667 C7.90416667,12.5875 7.90416667,13.1625 8.2875,13.5458333 L10.2041667,15.4625 C10.3958333,15.6541667 10.6354167,15.75 10.875,15.75 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
@@ -155,14 +171,16 @@
 																							</svg><!--end::Svg Icon--></span>
 																			<span class="text-muted font-weight-bold">{{$course->source}}</span>
 														</div>
-													</div>
+													
+												</div>
+
 												</div>
 												<!--end::Info-->
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
 																									<input type="checkbox" class="activate_course_switch"onclick="updateStatus('is_active',this.checked,'{{$course->id}}')"
-                                                                                                        {{$education->is_active ? 'checked' : ''}}
+                                                                                                        {{$course->is_active ? 'checked' : ''}}
                                                                                                         name="is_active" />
 																									<span></span>
 																								</label>
@@ -173,7 +191,7 @@
 											<!--begin::Bottom-->
 											<div class="pt-3">
 												<!--begin::Text-->
-												<p class="text-dark-75 font-size-lg font-weight-normal pt-5"{{$course->details}}></p>
+												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">{{$course->details}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem fugiat sequi earum vel rerum, voluptates, delectus iste saepe maxime molestiae tempore? In omnis quasi architecto unde suscipit quibusdam doloribus molestias.</p>
 												<!--end::Text-->
 
 												<!--begin::Action-->

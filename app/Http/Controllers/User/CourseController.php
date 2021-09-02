@@ -12,11 +12,11 @@ class CourseController extends Controller
 
     public function index()
     {     $courses = Courses::all();
-        if (request()->expectsJson())
-        {
+        // if (request()->expectsJson())
+        // {
           
-            return sendResponse(true , null , get_defined_vars() , 200);
-        }
+        //     return sendResponse(true , null , get_defined_vars() , 200);
+        // }
 
         return view('course.course',array("courses"=>$courses));
 
@@ -37,7 +37,7 @@ class CourseController extends Controller
         );
         $course->save();
             
-        return sendResponse(true , 'course saved successfully' , $course , 200);
+      //  return sendResponse(true , 'course saved successfully' , $course , 200);
     }
 
     public function updateStatus(Request $request)
@@ -45,16 +45,15 @@ class CourseController extends Controller
         $data = Courses::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
-        return sendResponse(true , "Status changed successfully" , null , 200);
+     //   return sendResponse(true , "Status changed successfully" , null , 200);
     }
 
 
-    public function delete(Request $request)
-    {
-
-        $data = Courses::findOrFail($request->id)->delete();
-        return sendResponse(true , "Course deleted successfully" , $data , 200);
-    }
+    // public function delete(Request $request)
+    // {
+    //     $data = Courses::findOrFail($request->id)->delete();
+    //     return sendResponse(true , "Course deleted successfully" , $data , 200);
+    // }
 
 
 }
