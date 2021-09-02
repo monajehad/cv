@@ -28,8 +28,8 @@ class SaveCourseRequest extends FormRequest
 
         $rules = [
             'name' => 'required|string|max:200|min:3',
-            'source' => 'required|string|max:200|min:50',
             'hours' => 'required',
+            'source' => 'required|string|max:200|min:10',
             'date' => 'required',
             'details' => 'nullable|string|max:500|min:50',
         ];
