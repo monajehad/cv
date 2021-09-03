@@ -42,7 +42,7 @@
 
 							<!--begin::Container-->
 							<div class="container">
-							  @if($courses == null )
+							  @if($courses->isEmpty())
 				     			<div class="card">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
