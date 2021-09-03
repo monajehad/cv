@@ -17,7 +17,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Course Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="name" placeholder="Course Name" />
+																						<input class="form-control form-control-lg form-control-solid" id="course_name" type="text" name="name" placeholder="Course Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">

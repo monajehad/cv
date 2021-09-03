@@ -199,10 +199,13 @@
 													<!--begin::Lable-->
 
 													<div class="card-toolbar mt-1 text-right">
-														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_course_btn"
+														onclick="remove('{{$course->id}}','user/course/delete')">
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
-														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_course_btn"
+														onclick="fillCourseModal('{{$course->id}}')" data-toggle = "modal" data-target = "#save_course_modal"
+														>
 															<i class="flaticon2-edit"></i>
 														</a>
 
@@ -231,6 +234,7 @@
 @section('script')
 <script src="{{asset('js/blades/user/course/save_course.js')}}"></script>
 
+<script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 
 
     

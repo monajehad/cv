@@ -17,9 +17,10 @@ $("#save_course_form").validate({
 
 function saveCourse(form) {
     let form_data = new FormData(form);
-    
+    var url = "/user/course/save";
+    if($('#admin_id').val() != 0) url = "/user/course/update";
     $.ajax({
-        url: baseUrl+"/user/course/save",
+        url: baseUrl+ "/user/course/save",
         type: 'POST',
         cache: false,
         contentType: false,

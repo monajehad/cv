@@ -31,7 +31,7 @@ Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
 
  Route::get('/course/index' , [CourseController::class , 'index'])->name('user.course.index');
     Route::post('/course/save' , [CourseController::class , 'save'])->name('user.course.save');
-     Route::post('/course/update' , [CourseController::class , 'update'])->name('user.course.update');
+  //   Route::post('/course/update' , [CourseController::class , 'update'])->name('user.course.update');
      Route::post('/course/delete' , [CourseController::class , 'delete'])->name('user.course.delete');
     Route::post('/course/status/update' , [CourseController::class , 'updateStatus'])->name('user.course.updateStatus');
 
