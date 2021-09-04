@@ -23,21 +23,11 @@ Route::get('/personalinformation', function(){
 })->name('personal');
 
 
-// Route::get('/work', function(){
-//     return view('work.work');
-// })->name('work');
 
 Route::get('/interset', function(){
     return view('interset.interset');
 })->name('interset');
 
-// Route::get('/course', function(){
-//     return view('course.course');
-// })->name('course');
-
-Route::get('/skill', function(){
-    return view('skill.skill');
-})->name('skill');
 
 Route::get('/portfolios', function(){
     return view('portfolios.portfolios');

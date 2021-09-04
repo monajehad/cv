@@ -179,7 +179,7 @@
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
-																									<input type="checkbox" class="activate_course_switch"onclick="updateStatus('is_active',this.checked,'{{$course->id}}')"
+																									<input type="checkbox" class="activate_course_switch"onclick="updateStatus('is_active',this.checked,'{{$course->id}}','/user/course/status/update')"
                                                                                                         {{$course->is_active ? 'checked' : ''}}
                                                                                                         name="is_active" />
 																									<span></span>

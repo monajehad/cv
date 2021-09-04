@@ -85,7 +85,7 @@
 									</a>
 								</li>
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('skill')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.skill.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon ">
 											<span class="flaticon2-user-1 icon-lg"></span>
 

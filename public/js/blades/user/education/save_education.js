@@ -34,7 +34,6 @@ function saveEducation(form) {
             }
         },
         success: function (result) {
-            alert('hhh');
             if (result.status) {
                 $('#save_education_modal').modal('hide');
                 let education = result.data.education;
