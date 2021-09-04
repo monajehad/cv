@@ -1,24 +1,24 @@
-$("#save_course_form").validate({
+$("#save_skill_form").validate({
     rules: {
 
         "name": {required: true},
-         "hours": {required: true},
-         "source": {required: true},
+         "level": {required: true},
+         
 
     },
     
     submitHandler: function (form) {
 
-        saveCourse(form);
+        saveSkill(form);
         return false;
     }
 });
 
 
-function saveCourse(form) {
+function saveSkill(form) {
     let form_data = new FormData(form);
     $.ajax({
-        url: baseUrl+ "/user/course/save",
+        url: baseUrl+ "/user/skill/save",
         type: 'POST',
         cache: false,
         contentType: false,
@@ -27,7 +27,7 @@ function saveCourse(form) {
         error: function (jqXHR, error, errorThrown) {
             if (jqXHR.responseJSON) {
                 let errors = jqXHR.responseJSON.errors;
-                showValidationErrors(errors,'#save_course_form');
+                showValidationErrors(errors,'#save_skill_form');
 
             } else {
                 swalException();
@@ -36,11 +36,11 @@ function saveCourse(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_course_modal').modal('toggle');
-                resetForm('save_course_form');
-                $('#course_id').val(0);
+                $('#save_skill_modal').modal('toggle');
+                resetForm('save_skill_form');
+                $('#skill_id').val(0);
                 toastr.success(result.message);
-                $('#course_container').reload();
+                $('#skill_container').reload();
             } else {
                 toastr.error(result.message);
               
@@ -52,9 +52,9 @@ function saveCourse(form) {
 }
 
 
-$(document).on('click','.add_course_btn',function (){
-    resetForm('save_course_form');
-    $('#course_id').val(0);
+$(document).on('click','.add_skill_btn',function (){
+    resetForm('save_skill_form');
+    $('#skill_id').val(0);
 });
 
 

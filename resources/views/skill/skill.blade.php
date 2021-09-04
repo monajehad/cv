@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_skill">Add skill</a>
+									<a href="#" class="btn btn-light-primary add_skill_btn font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_skill_modal">Add skill</a>
                             </div>
                             </div>
                           
@@ -38,7 +38,8 @@
 	<!--begin::Entry-->
     <div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
-							<div class="container">
+			  <div class="container">
+					@if($skills->isEmpty())
 							<div class="card">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
@@ -52,7 +53,7 @@
 											<br />Kickstart your CRM by adding a your first customer</p>
 											<!--end::Description-->
 											<!--begin::Action-->
-											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_skill">Add skill</a>
+											<a href="#" class="btn btn-primary add_skill_btn" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_skill_modal">Add skill</a>
 											<!--end::Action-->
 										</div>
 										<!--end::Wrapper-->
@@ -64,11 +65,12 @@
 									</div>
 									<!--end::Card body-->
 								</div>
-								<br>
-                                <br>
+						 @else
                                
                               <!--begin::Card-->
-							  <div class="row">
+							  <div class="row" id="skill_container">
+								@foreach($skills as $skill)
+
 									<div class="col-xl-6">
 									<div class="card card-custom gutter-b">
 										<!--begin::Body-->
@@ -95,10 +97,10 @@
 													<a href="javascript:"
 													class="text-dark-75 text-hover-primary mb-1 font-size-lg font-weight-bolder">
 
-														<span>skill_name</span>
+														<span> {{$skill->name}}</span>
 													</a>
 
-													<div class="d-flex">
+											<div class="d-flex">
 														
 														<div class="d-flex align-items-center pr-5">
 																								<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
@@ -112,7 +114,7 @@
 																									</g>
 																								</svg><!--end::Svg Icon-->
 																																																</span>
-															<span class="text-muted font-weight-bold">level</span>
+															<span class="text-muted font-weight-bold">{{$skill->level}}</span>
 														</div>
 														
 													</div>
@@ -121,9 +123,9 @@
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
-																									<input type="checkbox" class="activate_education_switch"
-																										
-																										name="select" />
+																									<input type="checkbox" class="activate_skill_switch"onclick="updateStatus('is_active',this.checked,'{{$skill->id}}','/user/skill/status/update')"
+                                                                                                        {{$skill->is_active ? 'checked' : ''}}
+                                                                                                        name="is_active" />
 																									<span></span>
 																								</label>
 																							</span>
@@ -137,35 +139,44 @@
 													<!--begin::Lable-->
 
 													<div class="card-toolbar mt-1 text-right">
-														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn"
+														onclick="remove('{{$skill->id}}','user/skill/delete')">
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
 														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn">
 															<i class="flaticon2-edit"></i>
 														</a>
-
-													</div>
-													<!--end::Lable-->
-												</div>
+												
+												    </div>
+										  			<!--end::Lable-->
+											   </div>
 												<!--end::Action-->
-											</div>
+										    </div>
 											<!--end::Bottom-->
 
 										</div>
 										<!--end::Body-->
-									</div>
-								</div>
-																	</div>
-							</div>
+									  </div>
+								  </div>
+
+						    	@endforeach
+
+                   		
+				        	</div>
+							
+							@endif 
+				</div>
 							<!--end::Container-->
-						</div>
+			</div>
 						<!--end::Entry-->
 
 
 @include('skill.save_skill')
 @endsection
 @section('script')
+<script src="{{asset('js/blades/user/skill/save_skill.js')}}"></script>
 
+<script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 
 
     

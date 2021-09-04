@@ -1,9 +1,9 @@
 
 
-updateStatus = function (key, status, id ,rl) {
+updateStatus = function (key, status, id) {
 
     $.ajax({
-        url: baseUrl + rl,
+        url: baseUrl + "/user/course/status/update",
         type: "post",
         data: {
             'status': status,

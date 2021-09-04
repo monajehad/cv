@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\EducationController;
 use App\Http\Controllers\User\WorkController;
 use App\Http\Controllers\User\CourseController;
+use App\Http\Controllers\User\SkillController;
 
 
 
@@ -34,6 +35,14 @@ Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
   //   Route::post('/course/update' , [CourseController::class , 'update'])->name('user.course.update');
      Route::post('/course/delete' , [CourseController::class , 'delete'])->name('user.course.delete');
     Route::post('/course/status/update' , [CourseController::class , 'updateStatus'])->name('user.course.updateStatus');
+
+    //skill
+
+ Route::get('/skill/index' , [SkillController::class , 'index'])->name('user.skill.index');
+ Route::post('/skill/save' , [SkillController::class , 'save'])->name('user.skill.save');
+//   Route::post('/skill/update' , [SkillController::class , 'update'])->name('user.skill.update');
+  Route::post('/skill/delete' , [SkillController::class , 'delete'])->name('user.skill.delete');
+ Route::post('/skill/status/update' , [SkillController::class , 'updateStatus'])->name('user.skill.updateStatus');
 
 });
 
