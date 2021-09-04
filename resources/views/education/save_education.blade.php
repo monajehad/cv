@@ -22,7 +22,7 @@
                                 <span style="color:red;font-size: large;">*</span>
                             </label>
                             <div class="col-lg-9 col-xl-6">
-                                <input name="place_name" class="form-control form-control-lg form-control-solid" type="text"
+                                <input name="place_name" id="place_name" class="form-control form-control-lg form-control-solid" type="text"
                                         placeholder="Place Name"/>
                                 <span class="text-danger lev"></span>
                             </div>
@@ -32,7 +32,7 @@
                                 <span style="color:red;font-size: large;">*</span>
                             </label>
                             <div class="col-lg-9 col-xl-6">
-                                <input name="specialization" class="form-control form-control-lg form-control-solid" type="text"
+                                <input name="specialization" id="specialization" class="form-control form-control-lg form-control-solid" type="text"
                                         placeholder="Specialization"/>
                                 <span class="text-danger lev"></span>
                             </div>
@@ -42,7 +42,7 @@
                                 <span style="color:red;font-size: large;">*</span>
                             </label>
                             <div class="col-lg-9 col-xl-6 ">
-                                <select name="degree" class="form-control form-control-lg form-control-solid selectpicker">
+                                <select name="degree" id="degree" class="form-control form-control-lg form-control-solid selectpicker">
                                     <option value="bachelors">Bachelors</option>
                                     <option value="masters">Masters</option>
                                     <option value="diploma">diploma</option>
@@ -77,14 +77,12 @@
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
                             <div class="col-lg-9 col-xl-6">
-                                <div class=" input-group-solid">
-                                    <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
-                                    <div name="details" id="kt_quil_1" style="height: 200px;" >Compose a message</div>
-                                    <span class="text-danger lev"></span>
-                                </div>
+                                <textarea  name="details" id="details" class="form-control i7_max_length"  maxlength="500" placeholder="" rows="6"></textarea>
+                                <span class="form-text text-muted">maximum 500 character</span>
+                                <span class="text-danger lev"></span>
+
                             </div>
                         </div>
-
                     </form>
                 </div>
             </div>

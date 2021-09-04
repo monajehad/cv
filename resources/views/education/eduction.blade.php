@@ -29,7 +29,7 @@
             <div class="d-flex align-items-center">
                 <!--begin::Actions-->
                 <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm" aria-haspopup="true"
-                   aria-expanded="false" data-toggle="modal" data-target="#save_education_modal">Add education
+                   aria-expanded="false" data-toggle="modal" data-target="#save_education_modal" id="add_education_btn">Add education
                 </a>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
         <div class="container">
-            <div class="card" style="display: none;">
+            <div class="card" id="add_your_first_education" style="display: none;">
                 <!--begin::Card body-->
                 <div class="card-body p-0">
                     <!--begin::Wrapper-->

@@ -14,7 +14,7 @@ class WorkController extends Controller
     {
         if (request()->expectsJson())
         {
-            $works = Works::all();
+            $works = Works::orderBy('start_date','DESC')->get();
             foreach ($works as $work)
             {
                 $work->append('work_card');
