@@ -9,7 +9,7 @@
 																		</button>
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
-																		<div data-scroll="true" data-height="600">
+																		<div data-scroll="true" data-height="450">
 																			<form class="form pt-9 pl-9" id="save_work_form"  method="POST" action="{{route('user.work.save')}}">
                                                                                @csrf 
 																			   <input name="work_id" id="work_id" type="hidden">
@@ -18,13 +18,13 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Company Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="company_name" placeholder="Company Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" id="company_name" name="company_name" placeholder="Company Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Job Title <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="job_title" placeholder="Work Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" id="job_title" name="job_title" placeholder="Work Name" />
 																					</div>
 																				</div>
 																				
@@ -33,7 +33,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end) <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
 																						<div class="input-group input-group-lg input-group-solid"  id='kt_daterangepicker_2'>
-                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" name="date"readonly="readonly" placeholder="Select date range" />
+                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" id="date" name="date"readonly="readonly" placeholder="Select date range" />
                                                                                                 <div class="input-group-append">
                                                                                                     <span class="input-group-text">
                                                                                                         <i class="la la-calendar-check-o"></i>
@@ -46,10 +46,10 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
 																					<div class="col-lg-9 col-xl-6">
 																						
-																						  <div class=" input-group-solid"  >
-																						    <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
-																					     	  <div id="kt_quil_1" style="height: 325px; " name="details">Compose a message</div>
-
+																					  <div class=" input-group-solid"  >
+																						  <textarea  name="details" id="details" class="form-control i7_max_length"  maxlength="500" placeholder="" rows="6"></textarea>
+																							<span class="form-text text-muted">maximum 500 character</span>
+																							<span class="text-danger lev"></span>
 																						   </div>
                                                                                       </div>
 												

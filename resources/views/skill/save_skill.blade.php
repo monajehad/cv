@@ -9,7 +9,7 @@
 																		</button>
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
-																		<div data-scroll="true" data-height="600">
+																		<div data-scroll="true" data-height="300">
 																		<form class="form pt-9 pl-9" id="save_skill_form">
 																			@csrf
 																			<input name="skill_id" value="0" id="skill_id" type="hidden">
@@ -18,7 +18,7 @@
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">skill Name <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="name" placeholder="Skill Name" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" id="name" name="name" placeholder="Skill Name" />
 																					</div>
 																				</div>
 																				
@@ -27,7 +27,7 @@
                                                                                 <div class="form-group row">
 																					 <label class="col-xl-3 col-lg-3 text-left col-form-label">level <span style="color:red;font-size: large;">*</span></label>
 																					  <div class="col-lg-9 col-xl-6">
-                                                                                            <select class="form-control selectpicker form-control-solid "  name="level" >
+                                                                                            <select class="form-control selectpicker form-control-solid " id="level" name="level" >
 																						       <option value="junior">junior</option>
 																						       <option value="good"> Good</option>
                                                                                                <option value="advanced">advanced </option>

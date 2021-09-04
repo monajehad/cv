@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="d-flex align-items-center">
 									<!--begin::Actions-->
-									<a href="#" class="btn btn-light-primary font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_testimonial">Add testimonial</a>
+									<a href="#" class="btn btn-light-primary add_testimonial_btn font-weight-bolder btn-sm"  aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_testimonial_modal">Add testimonial</a>
                             </div>
                             </div>
                           
@@ -41,6 +41,7 @@
     <div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
+							@if($testimonials->isEmpty())
 								<!--begin::Card-->
 								<div class="card">
 								<!--begin::Card body-->
@@ -55,7 +56,7 @@
 											<br />Kickstart your CRM by adding a your first customer</p>
 											<!--end::Description-->
 											<!--begin::Action-->
-											<a href="#" class="btn btn-primary" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#add_new_testimonial">Add testimonial</a>
+											<a href="#" class="btn btn-primary add_testimonial_btn" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#save_testimonial_modal">Add testimonial</a>
 											<!--end::Action-->
 										</div>
 										<!--end::Wrapper-->
@@ -67,10 +68,12 @@
 									</div>
 									<!--end::Card body-->
 								</div>
-								<br>
-                                <br>
+							@else
+
                                 <!--begin::Card-->
-									<div class="row">
+									<div class="row" id="testimonial_container">
+								@foreach($testimonials as $testimonial)
+
 									<div class="col-xl-6">
 									<div class="card card-custom gutter-b">
 										<!--begin::Body-->
@@ -96,7 +99,7 @@
 													<a href="javascript:"
 													class="text-dark-75 text-hover-primary mb-1 font-size-lg font-weight-bolder">
 
-														<span>Person's Name </span>
+														<span>{{$testimonial->person_name}}  </span>
 													</a>
 
 													<div class="d-flex">
@@ -109,7 +112,7 @@
 																											</g>
 																										</svg><!--end::Svg Icon-->
 																								</span>
-															<span class="text-muted font-weight-bold">person email</span>
+															<span class="text-muted font-weight-bold">{{$testimonial->person_email}}  </span>
 														</div>
 														<div class="d-flex align-items-center pr-5">
 																								<span class="svg-icon svg-icon-md svg-icon-primary pr-1">
@@ -120,7 +123,7 @@
 																										</g>
 																									</svg><!--end::Svg Icon-->
 																								</span>
-															<span class="text-muted font-weight-bold">person mobile</span>
+															<span class="text-muted font-weight-bold">{{$testimonial->person_mobile}}  </span>
 														</div>
 														
 													</div>
@@ -129,9 +132,10 @@
 												<div class=" ml-2"  title="Quick actions" data-placement="left">
 																						<span class="switch switch-icon">
 																								<label>
-																									<input type="checkbox" class="activate_education_switch"
-																										
-																										name="select" />
+																									<input type="checkbox" class="activate_testimonial_switch"
+																									onclick="updateStatus('is_active',this.checked,'{{$testimonial->id}}','/user/testimonial/status/update')"
+                                                                                                        {{$testimonial->is_active ? 'checked' : ''}}
+                                                                                                        name="is_active" />
 																									<span></span>
 																								</label>
 																							</span>
@@ -141,7 +145,7 @@
 											<!--begin::Bottom-->
 											<div class="pt-3">
 												<!--begin::Text-->
-												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod minima ad quibusdam explicabo nam laudantium unde tempora, dignissimos, minus consequuntur magni qui omnis labore sunt aliquam sint eum cupiditate iusto.</p>
+												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">{{$testimonial->about}}</p>
 												<!--end::Text-->
 
 												<!--begin::Action-->
@@ -149,10 +153,13 @@
 													<!--begin::Lable-->
 
 													<div class="card-toolbar mt-1 text-right">
-														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn">
-															<i class="flaticon2-rubbish-bin"></i>
+														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_testimonial_btn"
+														onclick="remove('{{$testimonial->id}}','user/testimonial/delete')">
+														<i class="flaticon2-rubbish-bin"></i>
 														</a>
-														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_testimonial_btn"
+														onclick="fillTestimonialModal('{{$testimonial->id}}','{{$testimonial->person_name}}','{{$testimonial->person_email}}','{{$testimonial->person_mobile}}','{{$testimonial->about}}')" data-toggle = "modal" data-target = "#save_testimonial_modal"
+														>
 															<i class="flaticon2-edit"></i>
 														</a>
 
@@ -167,7 +174,11 @@
 										<!--end::Body-->
 									</div>
 								</div>
+								@endforeach
+
 																	</div>
+					@endif
+
 							</div>
 							<!--end::Container-->
 						</div>
@@ -177,7 +188,10 @@
 @include('testimonials.save_testimonials')
 @endsection
 @section('script')
+<script src="{{asset('js/blades/user/testimonial/save_testimonial.js')}}"></script>
+<script src="{{asset('js/blades/user/testimonial/edit_testimonial.js')}}"></script>
 
+<script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 
 
     

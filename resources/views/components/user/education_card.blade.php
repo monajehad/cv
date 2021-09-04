@@ -107,11 +107,12 @@
                     <!--begin::Lable-->
 
                     <div class="card-toolbar mt-1 text-right">
-                        <a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn">
+                        <a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn"
+							onclick="remove('{{$education->id}}','user/education/delete')">
                             <i class="flaticon2-rubbish-bin"></i>
                         </a>
                         <a href="#" class="btn btn-sm btn-icon btn-light-success mr-2" data-toggle="modal" data-target="#save_education_modal"
-                           onclick="fillEducationModal({{$education->id}})">
+                           onclick="fillEducationModal('{{$education->id}}')">
                             <i class="flaticon2-edit"></i>
                         </a>
 

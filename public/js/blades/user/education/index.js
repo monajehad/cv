@@ -99,6 +99,7 @@ fillEducationModal = function(id)
     $('#place_name').val(row.place_name);
     $('#specialization').val(row.specialization);
     $('#degree').selectpicker('val',row.degree);
+    $('#date').val(row.start_date+' | '+row.end_date);
     $('#details').val(row.details);
 
 
@@ -110,11 +111,7 @@ fillEducationModal = function(id)
 
     });
 
-    console.log(row.format_start_date,row.format_end_date);
-
-    $('#kt_daterangepicker_2').data('daterangepicker').setStartDate(row.format_start_date);
-    $('#kt_daterangepicker_2').data('daterangepicker').setEndDate(row.format_end_date);
-
+   
 }
 
 $(document).on('click','#add_education_btn',function (){

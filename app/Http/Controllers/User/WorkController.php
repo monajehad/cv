@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Work\SaveWorkRequest;
 use App\Models\Works;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 
 class WorkController extends Controller
 {
@@ -14,7 +14,7 @@ class WorkController extends Controller
     {
         if (request()->expectsJson())
         {
-            $works = Works::orderBy('start_date','DESC')->get();
+            $works = Works::all();
             foreach ($works as $work)
             {
                 $work->append('work_card');

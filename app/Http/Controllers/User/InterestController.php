@@ -4,46 +4,46 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Skill\SaveSkillRequest;
-use App\Models\Skills;
+use App\Models\Interests;
 use Illuminate\Http\Request;
 
-class SkillController extends Controller
+class InterestController extends Controller
 {
 
     public function index()
-    {     $skills = Skills::all();
+    {     $interests = Interests::all();
         if (request()->expectsJson())
         {
           
             return sendResponse(true , null , get_defined_vars() , 200);
         }
 
-        return view('skill.skill',array("skills"=>$skills));
+        return view('interest.interest',array("interests"=>$interests));
 
     }
 
-    public function save(SaveSkillRequest $request)
+    public function save(Request $request)
     {
         $inputs = $request->all();
-        if ($request->skill_id)
+        if ($request->interest_id)
         {
-            $skill = Skills::findOrFail($request->skill_id);
-            $skill->update($inputs);
+            $interest = Interests::findOrFail($request->interest_id);
+            $interest->update($inputs);
         } else
         {
-            $skill = Skills::create(
+            $interest = Interests::create(
                 array_merge(['user_id' => 1] , $inputs)
               );
             }
         
-        $skill->save();
+        $interest->save();
             
-      return sendResponse(true , 'skill saved successfully' , $skill , 200);
+      return sendResponse(true , 'interest saved successfully' , $interest , 200);
     }
 
     public function updateStatus(Request $request)
     {
-        $data = Skills::findOrFail($request->id);
+        $data = Interests::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
        return sendResponse(true , "Status changed successfully" , null , 200);
@@ -52,7 +52,7 @@ class SkillController extends Controller
 
     public function delete(Request $request)
     {
-        $data = Skills::findOrFail($request->id)->delete();
+        $data = Interests::findOrFail($request->id)->delete();
        return sendResponse(true , "interest deleted successfully" , $data , 200);
     }
 

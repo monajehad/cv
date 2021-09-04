@@ -139,11 +139,13 @@
 													<!--begin::Lable-->
 
 													<div class="card-toolbar mt-1 text-right">
-														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_education_btn"
+														<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2 delete_skill_btn"
 														onclick="remove('{{$skill->id}}','user/skill/delete')">
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
-														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn">
+														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_skill_btn"
+														onclick="fillSkillModal('{{$skill->id}}','{{$skill->name}}','{{$skill->level}}')" data-toggle = "modal" data-target = "#save_skill_modal"
+														>
 															<i class="flaticon2-edit"></i>
 														</a>
 												
@@ -164,7 +166,7 @@
                    		
 				        	</div>
 							
-							@endif 
+					@endif 
 				</div>
 							<!--end::Container-->
 			</div>
@@ -175,6 +177,7 @@
 @endsection
 @section('script')
 <script src="{{asset('js/blades/user/skill/save_skill.js')}}"></script>
+<script src="{{asset('js/blades/user/skill/edit_skill.js')}}"></script>
 
 <script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 

@@ -62,7 +62,7 @@
                             </label>
                             <div class="col-lg-9 col-xl-6">
                                 <div class="input-group input-group-lg input-group-solid" id='kt_daterangepicker_2'>
-                                    <input name="date" type="text" class="form-control form-control-lg form-control-solid"
+                                    <input name="date" id="date" type="text" class="form-control form-control-lg form-control-solid"
                                             readonly="readonly" placeholder="Select date range"/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">

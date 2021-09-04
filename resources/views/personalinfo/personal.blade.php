@@ -576,9 +576,9 @@
                                                          <div class="form-group row">
                                                             <label class="col-3">description</label>
                                                             <div class="col-9">
-															  <!-- <textarea name="content" class="form-control" data-provide="markdown" rows="10"></textarea> -->
-															  <div id="kt_quil_1" style="height: 325px; " name="details">Compose a message</div>
-
+															<textarea  name="details" id="details" class="form-control i7_max_length"  maxlength="500" placeholder="" rows="6"></textarea>
+																<span class="form-text text-muted">maximum 500 character</span>
+																<span class="text-danger lev"></span>	
 															</div>
                                                           </div>    
                                                     </div>  

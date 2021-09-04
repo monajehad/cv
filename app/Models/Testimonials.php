@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Interset extends Model
+class Testimonials extends Model
 {
     protected $fillable = [
-        'name','is_active','user_id',
+        'person_name','person_email','person_mobile',
+        'about','is_active','user_id',
     ];
 
     public function user()

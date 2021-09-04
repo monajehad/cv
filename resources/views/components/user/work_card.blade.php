@@ -105,7 +105,9 @@
 														onclick="remove('{{$work->id}}','user/work/delete')">
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
-														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_education_btn" >
+														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_work_btn" 
+														data-toggle="modal" data-target="#save_work_modal"
+                                                            onclick="fillWorkModal('{{$work->id}}')">
 															<i class="flaticon2-edit"></i>
 														</a>
 

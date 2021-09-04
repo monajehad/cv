@@ -41,7 +41,7 @@
     <div class="d-flex flex-column-fluid">
 
 							<!--begin::Container-->
-							<div class="container">
+							<div class="container" >
 							  @if($courses->isEmpty())
 				     			<div class="card">
 								<!--begin::Card body-->
@@ -191,7 +191,7 @@
 											<!--begin::Bottom-->
 											<div class="pt-3">
 												<!--begin::Text-->
-												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">{{$course->details}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem fugiat sequi earum vel rerum, voluptates, delectus iste saepe maxime molestiae tempore? In omnis quasi architecto unde suscipit quibusdam doloribus molestias.</p>
+												<p class="text-dark-75 font-size-lg font-weight-normal pt-5">{{$course->details}}</p>
 												<!--end::Text-->
 
 												<!--begin::Action-->
@@ -204,7 +204,7 @@
 															<i class="flaticon2-rubbish-bin"></i>
 														</a>
 														<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2 edit_course_btn"
-														onclick="fillCourseModal('{{$course->id}}')" data-toggle = "modal" data-target = "#save_course_modal"
+														onclick="fillCourseModal('{{$course->id}}','{{$course->name}}','{{$course->hours}}','{{$course->source}}','{{$course->details}}','{{$course->start_date}}','{{$course->end_date}}')" data-toggle = "modal" data-target = "#save_course_modal"
 														>
 															<i class="flaticon2-edit"></i>
 														</a>
@@ -233,6 +233,7 @@
 @endsection
 @section('script')
 <script src="{{asset('js/blades/user/course/save_course.js')}}"></script>
+<script src="{{asset('js/blades/user/course/edit_course.js')}}"></script>
 
 <script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 

@@ -24,9 +24,6 @@ Route::get('/personalinformation', function(){
 
 
 
-Route::get('/interset', function(){
-    return view('interset.interset');
-})->name('interset');
 
 
 Route::get('/portfolios', function(){
@@ -35,9 +32,7 @@ Route::get('/portfolios', function(){
 Route::get('/social', function(){
     return view('social.social');
 })->name('social');
-Route::get('/testimonial', function(){
-    return view('testimonials.testimonial');
-})->name('testimonial');
+
 
 //Auth::routes();
 

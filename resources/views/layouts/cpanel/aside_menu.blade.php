@@ -97,7 +97,7 @@
 								</li>
 									
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-										<a href="{{route('interset')}}" class="menu-link menu-toggle">
+										<a href="{{route('user.interest.index')}}" class="menu-link menu-toggle">
 											<span class="svg-icon menu-icon">
 																<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Devices\Midi.svg-->
 													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -114,7 +114,7 @@
 												</svg><!--end::Svg Icon-->
 											</span>
 
-											<span class="menu-text">Interset</span>
+											<span class="menu-text">Interest</span>
 									<!-- <i class="menu-arrow"></i> -->
 										</a>
 								</li>
@@ -142,7 +142,7 @@
 								</li>
 
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('testimonial')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.testimonial.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 										  <span class="flaticon2-hangouts-logo icon-lg "></span>
 

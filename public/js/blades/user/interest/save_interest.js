@@ -1,26 +1,24 @@
-let SaveWorkFormHtml = $("#save_work_form");
-SaveWorkFormHtml.validate({
+$("#save_interest_form").validate({
     rules: {
 
-        "company_name": {required: true},
-         "job_title": {required: true},
+        "name": {required: true},
+         
+
     },
     
     submitHandler: function (form) {
 
-        saveWork(form);
+        saveInterest(form);
         return false;
     }
 });
 
 
-function saveWork(form) {
+function saveInterest(form) {
     let form_data = new FormData(form);
-    let workContainer = $(`#work_container`);
-
     $.ajax({
-        url:  SaveWorkFormHtml.attr('action'),
-        type: SaveWorkFormHtml.attr('method'),
+        url: baseUrl+ "/user/interest/save",
+        type: 'POST',
         cache: false,
         contentType: false,
         processData: false,
@@ -28,23 +26,23 @@ function saveWork(form) {
         error: function (jqXHR, error, errorThrown) {
             if (jqXHR.responseJSON) {
                 let errors = jqXHR.responseJSON.errors;
-                showValidationErrors(errors);
+                showValidationErrors(errors,'#save_interest_form');
 
             } else {
                 swalException();
+             
             }
         },
         success: function (result) {
             if (result.status) {
-                $('#save_work_modal').modal('hide');
-                let work = result.data.work;
-
-                workContainer.prepend(work.work_card);
+                $('#save_interest_modal').modal('toggle');
+                resetForm('save_interest_form');
+                $('#interest_id').val(0);
                 toastr.success(result.message);
-                $('#add_your_first_work').hide();
-                resetForm('save_work_form');
+                $('#interest_container').reload();
             } else {
                 toastr.error(result.message);
+              
             }
         },
         complete: function () {
@@ -52,6 +50,11 @@ function saveWork(form) {
     });
 }
 
+
+$(document).on('click','.add_interest_btn',function (){
+    resetForm('save_interest_form');
+    $('#interest_id').val(0);
+});
 
 
 

@@ -33,23 +33,10 @@ updateStatus = function (key, status, id ,rl) {
 };
 
 
-fillCourseModal = function(id)
-{
+$('.i7_max_length').maxlength({
+    threshold: 5,
+    warningClass: "label label-danger label-rounded label-inline",
+    limitReachedClass: "label label-primary label-rounded label-inline",
+    appendToParent: true
 
-    
-    $('#course_id').val(id);
-    $('#course_name').val(name);
-    // $('#full_name').val(row.name);
-    // $('#mobile').val(row.mobile);
-    // $('#password').val(row.password);
-
-
-    // $('#is_active').prop('checked', row.is_active );
-
-
-
-
-
-
-
-}
+});

@@ -1,24 +1,25 @@
-$("#save_course_form").validate({
+$("#save_testimonial_form").validate({
     rules: {
 
-        "name": {required: true},
-         "hours": {required: true},
-         "source": {required: true},
+        "person_name": {required: true},
+         "person_email": {required: true},
+         "person_mobile": {required: true},
+       //  "about": {required: true},
 
     },
     
     submitHandler: function (form) {
 
-        saveCourse(form);
+        saveTestimonial(form);
         return false;
     }
 });
 
 
-function saveCourse(form) {
+function saveTestimonial(form) {
     let form_data = new FormData(form);
     $.ajax({
-        url: baseUrl+ "/user/course/save",
+        url: baseUrl+ "/user/testimonial/save",
         type: 'POST',
         cache: false,
         contentType: false,
@@ -27,7 +28,7 @@ function saveCourse(form) {
         error: function (jqXHR, error, errorThrown) {
             if (jqXHR.responseJSON) {
                 let errors = jqXHR.responseJSON.errors;
-                showValidationErrors(errors,'#save_course_form');
+                showValidationErrors(errors,'#save_testimonial_form');
 
             } else {
                 swalException();
@@ -36,10 +37,11 @@ function saveCourse(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_course_modal').modal('toggle');
-                resetForm('save_course_form');
+                $('#save_testimonial_modal').modal('toggle');
+                resetForm('save_testimonial_form');
+                $('#testimonial_id').val(0);
                 toastr.success(result.message);
-              //  $('#course_container').reload();
+                $('#testimonial_container').reload();
             } else {
                 toastr.error(result.message);
               
@@ -51,9 +53,9 @@ function saveCourse(form) {
 }
 
 
-$(document).on('click','.add_course_btn',function (){
-    resetForm('save_course_form');
-    $('#course_id').val(0);
+$(document).on('click','.add_testimonial_btn',function (){
+    resetForm('save_testimonial_form');
+    $('#testimonial_id').val(0);
 });
 
 

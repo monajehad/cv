@@ -1,10 +1,11 @@
 let nextUrl = null;
+work_data = [];
 
 
-// $(document).on('click', '#refresh_education_btn', function () {
-//     refreshWork();
+$(document).on('click', '#refresh_work_btn', function () {
+    refreshWork();
 
-// });
+});
 
 $(document).ready(function () {
     refreshWork();
@@ -20,21 +21,24 @@ function refreshWork() {
         url: URL,
         type: 'GET',
         data: {
-                'company_name':company_name,
-                'job_title':job_title,
-                'start_date':start_date,
-                'end_date':end_date,
-                'details':details,
+                
         },
  
         success: function (result) {
             if (result.status) {
                 let works = result.data.works;
                 console.log('works', result.data);
-                
+                if (works.length == 0) {
+                    $('#add_your_first_work').show();
+                } else {
+
+                    $('#add_your_first_work').hide();
+                }
+
 
                 works.forEach(function (work) {
-                    workContainer.append(work,work_card);
+                    workContainer.append(work.work_card);
+                    work_data[work.id] = work;
                 });
 
 
@@ -81,3 +85,41 @@ updateStatus = function (key, status, id) {
         }
     });
 };
+
+$('.i7_max_length').maxlength({
+    threshold: 5,
+    warningClass: "label label-danger label-rounded label-inline",
+    limitReachedClass: "label label-primary label-rounded label-inline",
+    appendToParent: true
+
+});
+
+
+fillWorkModal = function(id)
+{
+    resetForm('save_work_form');
+    var row = work_data[id];
+    $('#work_id').val(id);
+
+    $('#company_name').val(row.company_name);
+    $('#job_title').val(row.job_title);
+    $('#date').val(row.start_date+' | '+row.end_date);
+    $('#details').val(row.details);
+
+
+    $('.i7_max_length').maxlength({
+        threshold: 5,
+        warningClass: "label label-danger label-rounded label-inline",
+        limitReachedClass: "label label-primary label-rounded label-inline",
+        appendToParent: true
+
+    });
+
+   
+
+}
+
+$(document).on('click','.add_work_btn',function (){
+
+    resetForm('save_work_form');
+});
