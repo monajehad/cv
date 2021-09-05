@@ -2,10 +2,10 @@ let nextUrl = null;
 work_data = [];
 
 
-$(document).on('click', '#refresh_work_btn', function () {
-    refreshWork();
+// $(document).on('click', '#refresh_work_btn', function () {
+//     refreshWork();
 
-});
+// });
 
 $(document).ready(function () {
     refreshWork();
@@ -103,7 +103,8 @@ fillWorkModal = function(id)
 
     $('#company_name').val(row.company_name);
     $('#job_title').val(row.job_title);
-    $('#date').val(row.start_date+' | '+row.end_date);
+    $('#start_date').val(row.start_date);
+    $('#end_date').val(row.end_date);
     $('#details').val(row.details);
 
 
@@ -122,4 +123,6 @@ fillWorkModal = function(id)
 $(document).on('click','.add_work_btn',function (){
 
     resetForm('save_work_form');
+    $('#work_id').val(null);
+
 });

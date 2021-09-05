@@ -10,7 +10,7 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="300">
-																		<form class="form pt-9 pl-9" id="save_skill_form">
+																		<form class="form pt-9 pl-9" id="save_skill_form" method="POST" action="{{route('user.skill.save')}}">
 																			@csrf
 																			<input name="skill_id" value="0" id="skill_id" type="hidden">
                                                                                 

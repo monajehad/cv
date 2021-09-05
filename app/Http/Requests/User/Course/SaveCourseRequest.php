@@ -30,7 +30,8 @@ class SaveCourseRequest extends FormRequest
             'name' => 'required|string|max:200|min:3',
             'hours' => 'required|integer',
             'source' => 'required|string|max:200|min:10',
-            'date' => 'required',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'details' => 'nullable|string|max:500|min:50',
         ];
 

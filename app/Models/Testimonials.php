@@ -15,6 +15,11 @@ class Testimonials extends Model
     {
         $this->belongsTo(User::class);
     }
-
+    public function getTestimonialCardAttribute()
+    {
+        return view('components.user.testimonial_card', [
+            'testimonial' => $this,
+        ])->render();
+    }
    
 }

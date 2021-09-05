@@ -1,4 +1,5 @@
-$("#save_course_form").validate({
+let SaveCourseFormHtml = $("#save_course_form");
+SaveCourseFormHtml.validate({
     rules: {
 
         "name": {required: true},
@@ -17,9 +18,11 @@ $("#save_course_form").validate({
 
 function saveCourse(form) {
     let form_data = new FormData(form);
+    let courseContainer = $(`#course_container`);
+
     $.ajax({
-        url: baseUrl+ "/user/course/save",
-        type: 'POST',
+        url:  SaveCourseFormHtml.attr('action'),
+        type: SaveCourseFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -36,13 +39,16 @@ function saveCourse(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_course_modal').modal('toggle');
-                resetForm('save_course_form');
+                $('#save_course_modal').modal('hide');
+                let course = result.data.course;
+
+
+                refreshCourse();
                 toastr.success(result.message);
-              //  $('#course_container').reload();
+                $('#add_your_first_course').hide();
+                resetForm('save_course_form');
             } else {
                 toastr.error(result.message);
-              
             }
         },
         complete: function () {
@@ -50,10 +56,11 @@ function saveCourse(form) {
     });
 }
 
+ 
 
 $(document).on('click','.add_course_btn',function (){
     resetForm('save_course_form');
-    $('#course_id').val(0);
+    $('#course_id').val(null);
 });
 
 

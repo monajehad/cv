@@ -29,7 +29,8 @@ class SaveWorkRequest extends FormRequest
         $rules = [
             'company_name' => 'nullable|string|max:200|min:3',
             'job_title' => 'required|string|max:200|min:3',
-            'date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
             'details' => 'nullable|string|max:500|min:50',
         ];
 

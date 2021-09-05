@@ -11,14 +11,18 @@ class SkillController extends Controller
 {
 
     public function index()
-    {     $skills = Skills::all();
-        if (request()->expectsJson())
+    {    if (request()->expectsJson())
         {
-          
+            // #ToDo :: check auth user skill on mona device
+            $skills = Skills::all();
+
+            foreach ($skills as $skill)
+            {
+                $skill->append('skill_card');
+            }
             return sendResponse(true , null , get_defined_vars() , 200);
         }
-
-        return view('skill.skill',array("skills"=>$skills));
+        return view('skill.skill');
 
     }
 
@@ -36,7 +40,7 @@ class SkillController extends Controller
               );
             }
         
-        $skill->save();
+            $skill->append('skill_card');
             
       return sendResponse(true , 'skill saved successfully' , $skill , 200);
     }

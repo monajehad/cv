@@ -32,14 +32,15 @@
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end) <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																						<div class="input-group input-group-lg input-group-solid"  id='kt_daterangepicker_2'>
-                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" id="date" name="date"readonly="readonly" placeholder="Select date range" />
-                                                                                                <div class="input-group-append">
-                                                                                                    <span class="input-group-text">
-                                                                                                        <i class="la la-calendar-check-o"></i>
-                                                                                                    </span>
-                                                                                                 </div>
-                                                                                        </div>
+																					<div class="input-daterange input-group input-group-solid" id="kt_datepicker_5">
+																							<input type="text" class="form-control" placeholder="start" name="start_date" id="start_date"/>
+																							<div class="input-group-append">
+																								<span class="input-group-text">
+																									<i class="la la-ellipsis-h"></i>
+																								</span>
+																							</div>
+																							<input type="text" class="form-control" placeholder="end" name="end_date" id="end_date"/>
+																						</div>
                                                                                     </div>
 																				</div>
                                                                                 <div class="form-group row">

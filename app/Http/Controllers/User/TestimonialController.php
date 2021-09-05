@@ -11,14 +11,19 @@ class TestimonialController extends Controller
 {
 
     public function index()
-    {     $testimonials = Testimonials::all();
+    {     
+          
         if (request()->expectsJson())
         {
-          
+            // #ToDo :: check auth user testimonial on mona device
+            $testimonials = Testimonials::all();
+            foreach ($testimonials as $testimonial)
+            {
+                $testimonial->append('testimonial_card');
+            }
             return sendResponse(true , null , get_defined_vars() , 200);
         }
-
-        return view('testimonials.testimonial',array("testimonials"=>$testimonials));
+        return view('testimonials.testimonial');
 
     }
 
@@ -36,7 +41,8 @@ class TestimonialController extends Controller
               );
             }
         
-        $testimonial->save();
+            $testimonial->append('testimonial_card');
+
             
       return sendResponse(true , 'testimonials saved successfully' , $testimonial , 200);
     }

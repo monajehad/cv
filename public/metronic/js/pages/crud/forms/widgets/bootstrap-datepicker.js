@@ -97,10 +97,11 @@ var KTBootstrapDatepicker = function () {
         });
 
         // range picker
-        $('#kt_datepicker_5').datepicker({
+        $('#kt_datepicker_5,#kt_datepicker_5_1,kt_datepicker_5_2').datepicker({
             rtl: KTUtil.isRTL(),
             todayHighlight: true,
-            templates: arrows
+            templates: arrows,
+            format: 'yyyy-mm-dd',
         });
 
          // inline picker

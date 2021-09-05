@@ -30,12 +30,7 @@ class EducationController extends Controller
     {
         $inputs = $request->all();
 
-        $date = explode(' | ' , $request->date);
-        $start_date = $date[0];
-        $end_date = $date[1];
-        $inputs['start_date'] = $start_date;
-        $inputs['end_date'] = $end_date;
-   
+      
         if ($request->education_id)
         {
             $education = Education::findOrFail($request->education_id);

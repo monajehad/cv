@@ -38,8 +38,8 @@ function saveWork(form) {
             if (result.status) {
                 $('#save_work_modal').modal('hide');
                 let work = result.data.work;
+                refreshWork();
 
-                workContainer.prepend(work.work_card);
                 toastr.success(result.message);
                 $('#add_your_first_work').hide();
                 resetForm('save_work_form');

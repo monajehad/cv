@@ -1,4 +1,5 @@
-$("#save_testimonial_form").validate({
+let SaveTestimonialFormHtml = $("#save_testimonial_form");
+SaveTestimonialFormHtml.validate({
     rules: {
 
         "person_name": {required: true},
@@ -18,9 +19,11 @@ $("#save_testimonial_form").validate({
 
 function saveTestimonial(form) {
     let form_data = new FormData(form);
+    let testimonialContainer = $(`#testimonial_container`);
+
     $.ajax({
-        url: baseUrl+ "/user/testimonial/save",
-        type: 'POST',
+        url:  SaveTestimonialFormHtml.attr('action'),
+        type: SaveTestimonialFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -37,11 +40,14 @@ function saveTestimonial(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_testimonial_modal').modal('toggle');
-                resetForm('save_testimonial_form');
-                $('#testimonial_id').val(0);
+                $('#save_testimonial_modal').modal('hide');
+                let testimonial = result.data.testimonial;
+                
+                refreshTestimonial();
                 toastr.success(result.message);
-                $('#testimonial_container').reload();
+                $('#add_your_first_testimonial').hide();
+                resetForm('save_testimonial_form');
+                
             } else {
                 toastr.error(result.message);
               
@@ -55,7 +61,7 @@ function saveTestimonial(form) {
 
 $(document).on('click','.add_testimonial_btn',function (){
     resetForm('save_testimonial_form');
-    $('#testimonial_id').val(0);
+    $('#testimonial_id').val(null);
 });
 
 

@@ -15,6 +15,11 @@ class Courses extends Model
     {
         $this->belongsTo(User::class);
     }
-
+    public function getCourseCardAttribute()
+    {
+        return view('components.user.course_card', [
+            'course' => $this,
+        ])->render();
+    }
    
 }

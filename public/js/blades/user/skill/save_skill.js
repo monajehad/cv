@@ -1,4 +1,5 @@
-$("#save_skill_form").validate({
+let SaveSkillFormHtml = $("#save_skill_form");
+SaveSkillFormHtml.validate({
     rules: {
 
         "name": {required: true},
@@ -17,9 +18,11 @@ $("#save_skill_form").validate({
 
 function saveSkill(form) {
     let form_data = new FormData(form);
+    let skillContainer = $(`#skill_container`);
+
     $.ajax({
-        url: baseUrl+ "/user/skill/save",
-        type: 'POST',
+        url:  SaveSkillFormHtml.attr('action'),
+        type: SaveSkillFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -36,25 +39,28 @@ function saveSkill(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_skill_modal').modal('toggle');
-                resetForm('save_skill_form');
-                $('#skill_id').val(0);
+                $('#save_skill_modal').modal('hide');
+                let skill = result.data.skill;
+
+
+                refreshSkill();
                 toastr.success(result.message);
-                $('#skill_container').reload();
+                $('#add_your_first_skill').hide();
+                resetForm('save_skill_form');
             } else {
                 toastr.error(result.message);
-              
             }
         },
-        complete: function () {
-        }
-    });
+
+complete: function () {
+}
+});
 }
 
 
 $(document).on('click','.add_skill_btn',function (){
     resetForm('save_skill_form');
-    $('#skill_id').val(0);
+    $('#skill_id').val(null);
 });
 
 

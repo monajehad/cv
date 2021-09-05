@@ -28,26 +28,24 @@
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Completion date <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																						<div class="input-group input-group-lg input-group-solid date"  id='kt_datepicker_3'>
-                                                                                           <input type='text' class="form-control form-control-lg form-control-solid" name="date" readonly="readonly" placeholder="Select date range" />
-                                                                                                <div class="input-group-append">
-                                                                                                    <span class="input-group-text">
-                                                                                                        <i class="la la-calendar"></i>
-                                                                                                    </span>
-                                                                                                 </div>
-                                                                                        </div>
+																						<div class="input-daterange input-group input-group-solid" id="kt_datepicker_5">
+																							<input type="text" class="form-control" placeholder="start" name="start_date" id="start_date"/>
+																							<div class="input-group-append">
+																								<span class="input-group-text">
+																									<i class="la la-ellipsis-h"></i>
+																								</span>
+																							</div>
+																							<input type="text" class="form-control" name="end_date" placeholder="end" id="end_date"/>
+																						</div>
                                                                                     </div>
 																				</div>
 													
                                                                                 <div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
                                                                                  <div class="col-lg-9 col-xl-6">
-																				 <div id="kt_quil_1" style="height: 325px; " name="details">Compose a message</div>
-
-																				 <!-- <div class="input-group input-group-lg input-group-solid"  >
-																						  <textarea name="description" class="form-control" data-provide="markdown" rows="10"></textarea>
-                                                               																					                           </div>
-                                                                                      </div> -->
+																				 <textarea  name="details"  class="form-control i7_max_length" id="details" maxlength="500" placeholder="" rows="6"></textarea>
+																							<span class="form-text text-muted">maximum 500 character</span>
+																							<span class="text-danger lev"></span>
 																				</div>
                                                                                 
 																			</form>

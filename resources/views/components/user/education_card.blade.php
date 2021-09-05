@@ -1,5 +1,5 @@
 <div class="col-xl-6">
-    <div class="card card-custom gutter-b">
+    <div class="card card-stretch card-custom gutter-b">
         <!--begin::Body-->
         <div class="card-body">
             <!--begin::Top-->

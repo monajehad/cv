@@ -10,9 +10,9 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="300">
-																		<form class="form pt-9 pl-9" id="save_interest_form">
+																		<form class="form pt-9 pl-9" id="save_interest_form" method="POST" action="{{route('user.interest.save')}}">
 																			@csrf
-																			<input name="interest_id" value="0" id="iterest_id" type="hidden">
+																			<input name="interest_id" value="0" id="interest_id" type="hidden">
                                                                                 
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Interest Name <span style="color:red;font-size: large;">*</span>

@@ -1,4 +1,5 @@
-$("#save_interest_form").validate({
+let SaveInterestFormHtml = $("#save_interest_form");
+SaveInterestFormHtml.validate({
     rules: {
 
         "name": {required: true},
@@ -16,9 +17,11 @@ $("#save_interest_form").validate({
 
 function saveInterest(form) {
     let form_data = new FormData(form);
+    let skillContainer = $(`#skill_container`);
+
     $.ajax({
-        url: baseUrl+ "/user/interest/save",
-        type: 'POST',
+        url:  SaveInterestFormHtml.attr('action'),
+        type: SaveInterestFormHtml.attr('method'),
         cache: false,
         contentType: false,
         processData: false,
@@ -35,11 +38,12 @@ function saveInterest(form) {
         },
         success: function (result) {
             if (result.status) {
-                $('#save_interest_modal').modal('toggle');
-                resetForm('save_interest_form');
-                $('#interest_id').val(0);
+                $('#save_interest_modal').modal('hide');
+                let interest = result.data.interest;
+                refreshInterest();
                 toastr.success(result.message);
-                $('#interest_container').reload();
+                resetForm('save_interest_form');
+                
             } else {
                 toastr.error(result.message);
               
@@ -53,7 +57,7 @@ function saveInterest(form) {
 
 $(document).on('click','.add_interest_btn',function (){
     resetForm('save_interest_form');
-    $('#interest_id').val(0);
+    $('#interest_id').val(null);
 });
 
 

@@ -11,14 +11,18 @@ class InterestController extends Controller
 {
 
     public function index()
-    {     $interests = Interests::all();
+    {     
         if (request()->expectsJson())
         {
-          
+            // #ToDo :: check auth user course on mona device
+            $interests = Interests::all();
+            foreach ($interests as $interest)
+            {
+                $interest->append('interest_card');
+            }
             return sendResponse(true , null , get_defined_vars() , 200);
         }
-
-        return view('interest.interest',array("interests"=>$interests));
+        return view('interest.interest');
 
     }
 
@@ -36,7 +40,8 @@ class InterestController extends Controller
               );
             }
         
-        $interest->save();
+            $interest->append('interest_card');
+
             
       return sendResponse(true , 'interest saved successfully' , $interest , 200);
     }

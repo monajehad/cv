@@ -99,7 +99,8 @@ fillEducationModal = function(id)
     $('#place_name').val(row.place_name);
     $('#specialization').val(row.specialization);
     $('#degree').selectpicker('val',row.degree);
-    $('#date').val(row.start_date+' | '+row.end_date);
+    $('#start_date').val(row.start_date);
+    $('#end_date').val(row.end_date);
     $('#details').val(row.details);
 
 
@@ -117,4 +118,6 @@ fillEducationModal = function(id)
 $(document).on('click','#add_education_btn',function (){
 
     resetForm('save_education_form');
+
+    $('#education_id').val(null);
 });

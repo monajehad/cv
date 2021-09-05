@@ -16,5 +16,10 @@ class Skills extends Model
         $this->belongsTo(User::class);
     }
 
-   
+    public function getSkillCardAttribute()
+    {
+        return view('components.user.skill_card', [
+            'skill' => $this,
+        ])->render();
+    }
 }
