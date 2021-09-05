@@ -27,13 +27,12 @@ class SaveEducationRequest extends FormRequest
     {
 
         $rules = [
-            'place_name' => 'required|string|max:200|min:3',
-            'specialization' => 'required|string|max:200|min:3',
-            'degree' => 'required',
-            'date' => 'required',
-            'details' => 'nullable|string|max:500|min:50',
+            'place_name'     => 'required|string|max:200|min:3' ,
+            'specialization' => 'required|string|max:200|min:3' ,
+            'degree'         => 'required' ,
+            'date'           => 'required' ,
+            'details'        => 'nullable|string|max:500|min:50' ,
         ];
-
 
 
         return $rules;

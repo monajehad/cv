@@ -38,7 +38,8 @@ function saveEducation(form) {
                 $('#save_education_modal').modal('hide');
                 let education = result.data.education;
 
-                educationContainer.prepend(education.education_card);
+
+                refreshEducation();
                 toastr.success(result.message);
                 $('#add_your_first_education').hide();
                 resetForm('save_education_form');

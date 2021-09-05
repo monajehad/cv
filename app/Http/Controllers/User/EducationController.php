@@ -15,7 +15,7 @@ class EducationController extends Controller
         if (request()->expectsJson())
         {
             // #ToDo :: check auth user education on mona device
-            $educations = Education::all();
+            $educations = Education::orderBy('start_date','DESC')->get();
             foreach ($educations as $education)
             {
                 $education->append('education_card');
