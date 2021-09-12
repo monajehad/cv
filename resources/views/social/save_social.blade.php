@@ -1,5 +1,5 @@
 <!--begin::Modal Content-->
-<div class="modal fade" id="add_new_social" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+<div class="modal fade" id="save_social_modal" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
 															<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
 																<div class="modal-content">
 																	<div class="modal-header">
@@ -10,74 +10,28 @@
 																	</div>
 																	<div class="modal-body" style="overflow:hidden;">
 																		<div data-scroll="true" data-height="600">
-																			<form class="form pt-9 pl-9">
+																		<form class="form pt-9 pl-9" id="save_social_form" method="POST" action="{{route('user.social.save')}}">
+																			@csrf
+																			<input name="social_id" value="0" id="social_id" type="hidden">
+                                                                                
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">link <span style="color:red;font-size: large;">*</span>
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
-																						<input class="form-control form-control-lg form-control-solid" type="text" name="link" placeholder="Http://" />
+																						<input class="form-control form-control-lg form-control-solid" type="text" id="link" name="link" value="{{$social->link??'Http://'}}"  />
 																					</div>
 																				</div>
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> Social media <span style="color:red;font-size: large;">*</span></label>
 																					<div class="col-lg-9 col-xl-6">
-																					   <select class="form-control form-control-lg form-control-solid selectpicker"  >
-                                                                                          
-																					     <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="flaticon-facebook-logo-button icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Facebook</span> 
-										
+																					   <select class="form-control form-control-lg form-control-solid selectpicker"  name="social_website_id"id="social_website_id">
+                                                                                        <?php $socials = \App\Models\Social_website::all(); ?>
+																						@foreach($socials as $social)
+																					     <option value="{{$social->id}}" class="form-control selectpicker   " data-icon="{{$social->icon_name}} mr-3 text-primary  icon-lg"  >
+																								  {{$social->name}}																												
                                                                                           </option>
-																						  <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="flaticon-instagram-logo icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Instagram</span> 
-										
-                                                                                          </option>																								
-																							
-																						  <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="flaticon-linkedin icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Linkedin</span> 
-										
-                                                                                          </option>		
-																						  <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="flaticon-twitter-logo-button icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Twitter</span> 
-										
-                                                                                          </option>																								
-																						  <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="fab fa-github icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Github</span> 
-										
-                                                                                          </option>																								
-																						  <option>
-																							   <span class="input-group-text text-primary ">
-																								  <i class="flaticon-letter-g icon-lg"></i>
-
-																						     	</span>
-																																		
-																						   	  <span class="menu-text">Gmail</span> 
-										
-                                                                                          </option>																																														
+																						@endforeach
+																																																																			
                                                                                         </select>																					
 																			    	</div>
 																				
@@ -90,7 +44,7 @@
 																	
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cancel</button>
-																		<button type="button" class="btn btn-primary font-weight-bold">Save</button>
+																		<button type="submit" form="save_social_form" class="btn btn-primary font-weight-bold">Save</button>
 																	</div>
 																</div>
 															</div>

@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'is_active',
     ];
 
     /**
@@ -44,6 +46,38 @@ class User extends Authenticatable
 
     public function education()
     {
-        $this->hasMany(Education::class);
+      return $this->hasMany(Education::class);
+    }
+    public function work()
+    {
+        return  $this->hasMany(Work::class);
+    }
+    public function skill()
+    {
+        return $this->hasMany(Skill::class);
+    }
+    public function interest()
+    {
+        return $this->hasMany(Interest::class);
+    }
+    public function course()
+    {
+        return $this->hasMany(Course::class);
+    }
+    public function social()
+    {
+        return $this->hasMany(Social::class);
+    }
+    public function person()
+    {
+        return $this->hasOne(Person::class);
+    }
+    public function testimonial()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
+    public function portfolios()
+    {
+        return $this->hasMany(Portfolio::class);
     }
 }

@@ -18,6 +18,7 @@
 		<script src="{{asset('js/aside_menu_mark.js')}}"></script>
 		<script src="{{asset('metronic/js/pages/crud/forms/widgets/bootstrap-daterangepicker.js')}}"></script>
 		<script src="{{asset('metronic/js/pages/crud/forms/editors/quill.js')}}"></script>
+		<script src="{{asset('metronic/js/pages/crud/file-upload/image-input.js')}}"></script>
 
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
@@ -29,4 +30,4 @@
 		<script src="{{asset('js/helper/reset_form.js')}}"></script>
 		<script src="{{asset('js/helper/toastr_msg/toastr_general_options.js')}}"></script>
 		<script src="{{asset('js/helper/sweet_alert_msg/general_sweet_alert.js')}}"></script>
-
+		<script src="https://unpkg.com/filepond/dist/filepond.js"></script>

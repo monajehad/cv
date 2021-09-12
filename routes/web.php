@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,26 +16,16 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('layouts.cpanel.app');
+    return view('auth.login');
 });
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/personalinformation', function(){
-    return view('personalinfo.personal');
-})->name('personal');
+Auth::routes(['verify' => true]);
+Route::get('/dashboard', [DashboardController::class, 'index'])->Middleware('auth:web','verified')->name('dashboard');
 
 
 
 
 
-Route::get('/portfolios', function(){
-    return view('portfolios.portfolios');
-})->name('portfolios');
-Route::get('/social', function(){
-    return view('social.social');
-})->name('social');
 
 
-//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

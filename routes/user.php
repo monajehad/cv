@@ -7,15 +7,22 @@ use App\Http\Controllers\User\CourseController;
 use App\Http\Controllers\User\SkillController;
 use App\Http\Controllers\User\InterestController;
 use App\Http\Controllers\User\TestimonialController;
+use App\Http\Controllers\User\SociallController;
+use App\Http\Controllers\User\PeopleController;
+use App\Http\Controllers\User\PortfoliosController;
 
 
 
+/*middleware('auth:web')->*/
 
-
-Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
+Route::middleware('auth:web','verified')->prefix('user')->group(function ()
 {
 
 
+    //personal
+    Route::get('/personal/index' , [PeopleController::class , 'index'])->name('user.personal.index');
+    Route::post('/personal/save' , [PeopleController::class , 'save'])->name('user.personal.save');
+    
 
     //education
     Route::get('/education/index' , [EducationController::class , 'index'])->name('user.education.index');
@@ -61,6 +68,30 @@ Route::/*middleware('auth:web')->*/prefix('user')->group(function ()
    //   Route::post('/testimonial/update' , [TestimonialController::class , 'update'])->name('user.testimonial.update');
     Route::post('/testimonial/delete' , [TestimonialController::class , 'delete'])->name('user.testimonial.delete');
     Route::post('/testimonial/status/update' , [TestimonialController::class , 'updateStatus'])->name('user.testimonial.updateStatus');
+    
+
+    //social
+    Route::get('/social/index' , [SociallController::class , 'index'])->name('user.social.index');
+    Route::post('/social/save' , [SociallController::class , 'save'])->name('user.social.save');
+   //   Route::post('/social/update' , [SociallController::class , 'update'])->name('user.social.update');
+    Route::post('/social/delete' , [SociallController::class , 'delete'])->name('user.social.delete');
+    Route::post('/social/status/update' , [SociallController::class , 'updateStatus'])->name('user.social.updateStatus');
+    
+ //portfolios
+ Route::get('/portfolios/index' , [PortfoliosController::class , 'index'])->name('user.portfolios.index');
+ Route::get('/portfolios/create' , [PortfoliosController::class , 'create'])->name('user.portfolios.create');
+ Route::get('/portfolios/edit/{id}' , [PortfoliosController::class , 'edit'])->name('user.portfolios.edit');
+ Route::post('/portfolios/update' , [PortfoliosController::class , 'update'])->name('user.portfolios.update');
+Route::post('/portfolios/store' , [PortfoliosController::class , 'store'])->name('user.portfolios.store');
+Route::post('/portfolios/store/files' , [PortfoliosController::class , 'upload_img'])->name('user.portfolios.store.files');
+ Route::post('/portfolios/delete' , [PortfoliosController::class , 'delete'])->name('user.portfolios.delete');
+ Route::post('/portfolios/multi/delete' , [PortfoliosController::class , 'multiDelete'])->name('user.portfolios.multiDelete');
+ Route::post('/portfolios/status/update' , [PortfoliosController::class , 'updateStatus'])->name('user.portfolios.updateStatus');
+
+      
+    
+  
+
     
 });
 

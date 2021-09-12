@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Education\SaveEducationRequest;
 use App\Models\Education;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EducationController extends Controller
 {
@@ -15,7 +16,7 @@ class EducationController extends Controller
         if (request()->expectsJson())
         {
             // #ToDo :: check auth user education on mona device
-            $educations = Education::orderBy('start_date','DESC')->get();
+            $educations = Education::orderBy('start_date','DESC')->where('user_id',Auth::user()->id)->get();
             foreach ($educations as $education)
             {
                 $education->append('education_card');
@@ -39,7 +40,7 @@ class EducationController extends Controller
         {
             // #ToDo :: on mona device $user_id = auth()->user()->id;
             $education = Education::create(
-                array_merge(['user_id' => 1] , $inputs)
+                array_merge(['user_id' => auth()->user()->id] , $inputs)
             );
         }
         $education->append('education_card');

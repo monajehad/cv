@@ -13,13 +13,19 @@ class Social extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+      return  $this->belongsTo(User::class);
     }
     
-    public function social_website()
+    public function getSocialCardAttribute()
     {
-        $this->belongsTo(Social_website::class);
+        return view('components.user.social_card', [
+            'social' => $this,
+        ])->render();
     }
-
    
+    public function social_website ()
+    {
+        return $this->belongsTo(Social_website::class);
+    }
+ 
 }

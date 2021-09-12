@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Interests extends Model
+class Interest extends Model
 {
     protected $fillable = [
         'name','is_active','user_id',
@@ -12,7 +12,7 @@ class Interests extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
     public function getInterestCardAttribute()
     {

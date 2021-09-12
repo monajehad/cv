@@ -4,8 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Testimonial\SaveTestimonialRequest;
-use App\Models\Testimonials;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestimonialController extends Controller
 {
@@ -16,7 +17,7 @@ class TestimonialController extends Controller
         if (request()->expectsJson())
         {
             // #ToDo :: check auth user testimonial on mona device
-            $testimonials = Testimonials::all();
+            $testimonials = Testimonial::all()->where('user_id',Auth::user()->id);
             foreach ($testimonials as $testimonial)
             {
                 $testimonial->append('testimonial_card');
@@ -32,12 +33,12 @@ class TestimonialController extends Controller
         $inputs = $request->all();
         if ($request->testimonial_id)
         {
-            $testimonial = Testimonials::findOrFail($request->testimonial_id);
+            $testimonial = Testimonial::findOrFail($request->testimonial_id);
             $testimonial->update($inputs);
         } else
         {
-            $testimonial = Testimonials::create(
-                array_merge(['user_id' => 1] , $inputs)
+            $testimonial = Testimonial::create(
+                array_merge(['user_id' => Auth::user()->id] , $inputs)
               );
             }
         
@@ -49,7 +50,7 @@ class TestimonialController extends Controller
 
     public function updateStatus(Request $request)
     {
-        $data = Testimonials::findOrFail($request->id);
+        $data = Testimonial::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
        return sendResponse(true , "Status changed successfully" , null , 200);
@@ -58,7 +59,7 @@ class TestimonialController extends Controller
 
     public function delete(Request $request)
     {
-        $data = Testimonials::findOrFail($request->id)->delete();
+        $data = Testimonial::findOrFail($request->id)->delete();
        return sendResponse(true , "testimonials deleted successfully" , $data , 200);
     }
 

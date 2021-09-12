@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Works extends Model
+class Work extends Model
 {
     protected $fillable = [
         'company_name','job_title','start_date',
@@ -14,7 +14,7 @@ class Works extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+      return $this->belongsTo(User::class);
     }
     public function getWorkCardAttribute()
     {

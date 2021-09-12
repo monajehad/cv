@@ -22,7 +22,7 @@
 									</a>
 								</li>
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('personal')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.personal.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
                                         <!-- <span class="svg-icon svg-icon-primary svg-icon-2x"> -->
                                             <!--begin::Svg Icon | path:{{asset('metronic/media/svg/icons\General\User.svg')}}-->
@@ -119,7 +119,7 @@
 										</a>
 								</li>
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('portfolios')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.portfolios.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon ">
 											<span class="flaticon-list icon-lg"></span>
 
@@ -130,7 +130,7 @@
 									</a>
 								</li>
 								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{route('social')}}" class="menu-link menu-toggle">
+									<a href="{{route('user.social.index')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 										  <span class="flaticon-earth-globe icon-lg "></span>
 

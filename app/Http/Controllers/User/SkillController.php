@@ -4,8 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Skill\SaveSkillRequest;
-use App\Models\Skills;
+use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SkillController extends Controller
 {
@@ -14,7 +15,7 @@ class SkillController extends Controller
     {    if (request()->expectsJson())
         {
             // #ToDo :: check auth user skill on mona device
-            $skills = Skills::all();
+            $skills = Skill::all()->where('user_id',Auth::user()->id);
 
             foreach ($skills as $skill)
             {
@@ -31,12 +32,12 @@ class SkillController extends Controller
         $inputs = $request->all();
         if ($request->skill_id)
         {
-            $skill = Skills::findOrFail($request->skill_id);
+            $skill = Skill::findOrFail($request->skill_id);
             $skill->update($inputs);
         } else
         {
-            $skill = Skills::create(
-                array_merge(['user_id' => 1] , $inputs)
+            $skill = Skill::create(
+                array_merge(['user_id' => Auth::user()->id] , $inputs)
               );
             }
         
@@ -47,7 +48,7 @@ class SkillController extends Controller
 
     public function updateStatus(Request $request)
     {
-        $data = Skills::findOrFail($request->id);
+        $data = Skill::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
        return sendResponse(true , "Status changed successfully" , null , 200);
@@ -56,7 +57,7 @@ class SkillController extends Controller
 
     public function delete(Request $request)
     {
-        $data = Skills::findOrFail($request->id)->delete();
+        $data = Skill::findOrFail($request->id)->delete();
        return sendResponse(true , "interest deleted successfully" , $data , 200);
     }
 

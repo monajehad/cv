@@ -54,17 +54,17 @@ function getOfferCategoryData()
 }
 
 
-function getAuthUserCartItemsCount()
-{
-    $user = auth('api')->user();
-    if($user)
-    {
-        $cart =  $user->orders()->cart()->first();
-        if($cart)
-        {
-            return $cart->items()->count();
-        }
-    }
-    return 0;
-}
+// function getAuthUserCartItemsCount()
+// {
+//     $user = auth('api')->user();
+//     if($user)
+//     {
+//         $cart =  $user->orders()->cart()->first();
+//         if($cart)
+//         {
+//             return $cart->items()->count();
+//         }
+//     }
+//     return 0;
+// }
 

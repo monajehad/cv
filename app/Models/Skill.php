@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Skills extends Model
+class Skill extends Model
 {
     protected $fillable = [
         'name','level',
@@ -13,7 +13,7 @@ class Skills extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+       return $this->belongsTo(User::class);
     }
 
     public function getSkillCardAttribute()

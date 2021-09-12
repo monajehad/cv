@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    protected $fillable = [];
+    protected $fillable = [
+        'name','code','position','is_active'
+    ];
 
-    public function user_addresses()
+    public function person_addresses()
     {
-        $this->hasMany(UserAddress::class);
+        $this->hasMany(PersonAddress::class);
     }
 }

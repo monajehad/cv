@@ -4,8 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Work\SaveWorkRequest;
-use App\Models\Works;
+use App\Models\Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorkController extends Controller
 {
@@ -14,7 +15,7 @@ class WorkController extends Controller
     {
         if (request()->expectsJson())
         {
-            $works = Works::all();
+            $works = Work::all()->where('user_id',Auth::user()->id);
             foreach ($works as $work)
             {
                 $work->append('work_card');
@@ -32,13 +33,13 @@ class WorkController extends Controller
        // dd($inputs);
         if ($request->work_id)
         {
-            $work = Works::findOrFail($request->work_id);
+            $work = Work::findOrFail($request->work_id);
             $work->update($inputs);
         } else
         {
             // #ToDo :: on mona device $user_id = auth()->user()->id;
-            $work = Works::create(
-                array_merge(['user_id' => 1] , $inputs)
+            $work = Work::create(
+                array_merge(['user_id' => Auth::user()->id] , $inputs)
             );
         }
         $work->append('work_card');
@@ -47,7 +48,7 @@ class WorkController extends Controller
 
     public function updateStatus(Request $request)
     {
-        $data = Works::findOrFail($request->id);
+        $data = Work::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
         return sendResponse(true , "Status changed successfully" , null , 200);
@@ -56,7 +57,7 @@ class WorkController extends Controller
     public function delete(Request $request)
     {
 
-        $data = Works::findOrFail($request->id)->delete();
+        $data = Work::findOrFail($request->id)->delete();
         return sendResponse(true , "Work deleted successfully" , $data , 200);
     }
 

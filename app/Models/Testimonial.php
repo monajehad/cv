@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Testimonials extends Model
+class Testimonial extends Model
 {
     protected $fillable = [
         'person_name','person_email','person_mobile',
@@ -13,7 +13,7 @@ class Testimonials extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+       return $this->belongsTo(User::class);
     }
     public function getTestimonialCardAttribute()
     {

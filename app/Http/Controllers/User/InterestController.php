@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\Skill\SaveSkillRequest;
-use App\Models\Interests;
+use App\Models\Interest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InterestController extends Controller
 {
@@ -15,7 +15,7 @@ class InterestController extends Controller
         if (request()->expectsJson())
         {
             // #ToDo :: check auth user course on mona device
-            $interests = Interests::all();
+            $interests = Interest::all()->where('user_id',Auth::user()->id);
             foreach ($interests as $interest)
             {
                 $interest->append('interest_card');
@@ -31,12 +31,12 @@ class InterestController extends Controller
         $inputs = $request->all();
         if ($request->interest_id)
         {
-            $interest = Interests::findOrFail($request->interest_id);
+            $interest = Interest::findOrFail($request->interest_id);
             $interest->update($inputs);
         } else
         {
-            $interest = Interests::create(
-                array_merge(['user_id' => 1] , $inputs)
+            $interest = Interest::create(
+                array_merge(['user_id' => Auth::user()->id] , $inputs)
               );
             }
         
@@ -48,7 +48,7 @@ class InterestController extends Controller
 
     public function updateStatus(Request $request)
     {
-        $data = Interests::findOrFail($request->id);
+        $data = Interest::findOrFail($request->id);
         $data[$request->key] = $request->status ? 1 : 0;
         $data->save();
        return sendResponse(true , "Status changed successfully" , null , 200);
@@ -57,7 +57,7 @@ class InterestController extends Controller
 
     public function delete(Request $request)
     {
-        $data = Interests::findOrFail($request->id)->delete();
+        $data = Interest::findOrFail($request->id)->delete();
        return sendResponse(true , "interest deleted successfully" , $data , 200);
     }
 

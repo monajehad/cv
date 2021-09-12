@@ -15,7 +15,7 @@ class Portfolio_media extends Model
 
     public function portfolio()
     {
-        $this->belongsTo(Portfolio::class);
+      return  $this->belongsTo(Portfolio::class);
     }
 
    

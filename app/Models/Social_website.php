@@ -11,6 +11,10 @@ class Social_website extends Model
      
     ];
 
- 
+    public function social ()
+    {
+        return $this->hasOne(Social::class);
+    }
+  
    
 }
