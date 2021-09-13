@@ -15,17 +15,20 @@ class PortfoliosController extends Controller
            
     	if (request()->expectsJson()) {
 
-            $portfolio = Portfolio::orderBy('updated_at','desc')
+            $portfolio = Portfolio::with('portfolioMedia')->orderBy('updated_at','desc')
             ->metronicPaginate();
-
+            // dd($portfolio);
     		return response()->json($portfolio)->setStatusCode(200);
         }
-        $portfolios = Portfolio::get();
+        $portfolios = Portfolio::with('portfolioMedia')->get();
+        //dd($portfolios);
+
         if ($portfolios->isEmpty()){
         return view('portfolios.portfolios',get_defined_vars());
      }
          else{
-            return view('portfolios.portfolios_datatable',get_defined_vars());
+             //return (get_defined_vars());
+         return view('portfolios.portfolios_datatable',get_defined_vars());
 
          }
     }
@@ -35,10 +38,12 @@ class PortfoliosController extends Controller
         return view('portfolios.save_portfolios',get_defined_vars());
     }
     public function upload_img(Request $request){
+    //    dd($request);
         $i=1;
-        if($request->name_media??false){
+        
+        if($request->hasfile('name_media')){
             $files=$request->name_media;
-           
+          // dd($files);
             foreach ($files as $file) {
                 $name=uniqid(). '-' . now()->timestamp.$file->getClientOriginalName() ;
                 $path = $file->storeAs("uploads/tmp/" , $name);
@@ -48,23 +53,23 @@ class PortfoliosController extends Controller
                     'portfolio_id'=> 0,
                     'name'=> $name,
                 ]);
+                
             }
         }
     }
     public function store(Request $request){
+        //dd($request->type);
         
         $portfolio = Portfolio::create(array_merge($request->all(),['user_id' => 1])); // comment
         //$this->upload_img($request);
-        $type=Portfolio_media::where('portfolio_id',$request->portfolio_media_id)->find('type');
-        $result = Portfolio_media::where('portfolio_id',0);
-        $result ->update([
+         Portfolio_media::where('portfolio_id',0)->
+        update([
             'portfolio_id'=>$portfolio->id,
-            
+            'type'=>$request->type
 
         ]);
-        $result ->update([
-            'type'=>$type
-        ]);
+        // Portfolio_media::where('portfolio_id',0)->
+        // delete();
         return sendResponse(true, trans('add_data'),  $portfolio, 200);
     }
    

@@ -21,7 +21,6 @@ var datatable_portfolios = function () {
             serverSorting: true,
             saveState:{cookie:false,webstorage:false}
         },
-
         // layout definition
         layout: {
             scroll: false, // enable/disable datatable scroll both horizontal and
@@ -50,14 +49,15 @@ var datatable_portfolios = function () {
             {
                 field: "project",
                 title: 'project',
-                width: 200,
+                width: 170,
                 textAlign: 'left',
 
                 template: function (t) {
+        //     console.log(t.portfolios_media);
                     
                     return `<div class="d-flex align-items-center style="width: inherit;">
 								<div class=" symbol symbol-40 flex-shrink-0"">
-									<img src="/storage/uploads/tmp/${t.name}"  height="50px!important" width="50px!important" style="object-fit: contain;">
+									<img src="/storage/uploads/tmp/${t && t[0] ? t[0].portfolios_media.name : ''}"  height="50px!important" width="50px!important" style="object-fit: contain;">
 								</div>
 								<div class=" mx-2 ">
 									<a href="#" class="text-dark-75 font-weight-bold line-height-sm">${t.portfolio_name}</a>
@@ -67,18 +67,20 @@ var datatable_portfolios = function () {
 							</div>`;
                 }
             }, {
-                field: "protfolio_media_id",
+                field: "media_type",
                 title: 'media_type',
-                width: 100,
-                textAlign: 'left',
+                filterable: 1,
+                sortable: 1,
+                width: 90,
+                textAlign: "left",
                 template: function (t) {
-                    
-                    
+            
+                        
                         return `<span class="text-dark-75 font-weight-bold line-height-sm">
-                        ${t.type }</span>
+                      ${t.portfolios_media}  </span>
                                          `;
                 
-                   
+                                         
 
                 }
             },
@@ -88,7 +90,7 @@ var datatable_portfolios = function () {
                 title: 'is_active',
                 filterable: 1,
                 sortable: 1,
-                width: 100,
+                width: 80,
                 textAlign: "left",
                 template: function (t) {
                     
@@ -105,7 +107,7 @@ var datatable_portfolios = function () {
             {
                 field: "date",
                 title: 'date(start-end)',
-                width: 150,
+                width: 120,
                 textAlign: 'left',
                 template: function (t) {
                     return t.start_date +`</br>` + t.end_date;
@@ -181,6 +183,7 @@ var datatable_portfolios = function () {
 }();
 
 jQuery(document).ready(function () {
+
     datatable_portfolios.init();
     count = datatable.getTotalRows() ?? 0;
     $('#kt_subheader_total_value').text(count);

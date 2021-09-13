@@ -107,12 +107,13 @@
 																				<div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> media_type <span style="color:red;font-size: large;">*</span></label>
 																				   <div class="col-lg-9 col-xl-6 input-group-solid">
-																					   <select class="form-control selectpicker" name="portfolio_id">
-																					      <?php //$type_media = \App\Models\Portfolio_media::all();
-																						 $type_media = array('doc', 'video', 'image', 'sound');
+																					   <select class="form-control selectpicker" name="type">
+																					      <?php $type_media = \App\Models\Portfolio_media::all();
+																						   $types_media = array('doc', 'video', 'image', 'sound');
 																						  ?>
-																					      @foreach($type_media as $media)
-																						   <option value="{{$media->type ??''}}">  {{$media }}	</option>
+																					      @foreach($types_media as $media)
+																						   <option value="{{$media }}" {{ ($media == $portfolio->portfolioMedia ? "selected":"") }} >  {{$media }}	</option>
+																						   
 																						@endforeach
 																					 </select>
 																						

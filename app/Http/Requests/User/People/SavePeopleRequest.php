@@ -34,7 +34,7 @@ class SavePeopleRequest extends FormRequest
             'birthday'          => 'required',
             'nationality'       => 'required|max:25|min:3' ,
             'marital'           => 'required' ,
-            'language'          => 'required|max:10' ,
+            //'language'          => 'required|max:10' ,
             'details'           => 'nullable|string|max:500|min:50' ,
         ];
 

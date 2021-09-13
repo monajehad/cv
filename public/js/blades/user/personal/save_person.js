@@ -7,10 +7,10 @@ $("#save_person_form").validate({
         'email'       : {required: true},
         'gender'      : {required: true},
         'mobile'      : {required: true},
-        // 'birthday'    : {required: true},
+         'birthday'    : {required: true},
         'nationality' : {required: true},
         'marital'     : {required: true},
-        'language'    : {required: true},
+        //'language'    : {required: true},
 
      //   "roles[]": {required: true},
     },

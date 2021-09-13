@@ -172,12 +172,12 @@ function deleteMultipleFile($data, $path, $attribute)
 
 function getDefaultImg($name)
 {
-    if(App\Models\Admins\Setting::where('name', '=', $name)
+    if(App\Models\People::where('name', '=', $name)
             ->count() > 0)
     {
-        $img = App\Models\Admins\Setting::where('name', $name)
+        $img = App\Models\People::where('name', $name)
             ->get()[0]->value;
-        return Storage::url(App\Models\Admins\Setting::MEDIA_PATH . $img);
+        return Storage::url(App\Models\People::MEDIA_PATH . $img);
     }
     return null;
 }
