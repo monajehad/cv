@@ -7,28 +7,31 @@ use App\Http\Requests\User\Course\SaveCourseRequest;
 use App\Models\Portfolio;
 use App\Models\Portfolio_media;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PortfoliosController extends Controller
 {
 
     public function index(){
-           
     	if (request()->expectsJson()) {
 
-            $portfolio = Portfolio::with('portfolioMedia')->orderBy('updated_at','desc')
+            $portfolio = Portfolio::where('user_id',Auth::user()->id)->with('portfolioMedia')->orderBy('updated_at','desc')
             ->metronicPaginate();
             // dd($portfolio);
+
     		return response()->json($portfolio)->setStatusCode(200);
         }
-        $portfolios = Portfolio::with('portfolioMedia')->get();
-        //dd($portfolios);
+        $portfolios = Portfolio::where('user_id',Auth::user()->id)->get();
+      //  dd($portfolios);
 
         if ($portfolios->isEmpty()){
         return view('portfolios.portfolios',get_defined_vars());
      }
          else{
+            $portfolioss=Portfolio_media::get()->first();
+
              //return (get_defined_vars());
-         return view('portfolios.portfolios_datatable',get_defined_vars());
+         return view('portfolios.portfolios_datatable',get_defined_vars())->with('portfol',$portfolioss);
 
          }
     }
@@ -46,7 +49,7 @@ class PortfoliosController extends Controller
           // dd($files);
             foreach ($files as $file) {
                 $name=uniqid(). '-' . now()->timestamp.$file->getClientOriginalName() ;
-                $path = $file->storeAs("uploads/tmp/" , $name);
+                $path = $file->storeAs("public/uploads/tmp/" , $name);
                 Portfolio_media::create([ 
                     'position'=>$i++,
                     'type'=> "doc",
@@ -60,8 +63,9 @@ class PortfoliosController extends Controller
     public function store(Request $request){
         //dd($request->type);
         
-        $portfolio = Portfolio::create(array_merge($request->all(),['user_id' => 1])); // comment
+        $portfolio = Portfolio::create(array_merge($request->all(),['user_id' => Auth::user()->id])); // comment
         //$this->upload_img($request);
+       
          Portfolio_media::where('portfolio_id',0)->
         update([
             'portfolio_id'=>$portfolio->id,
@@ -76,20 +80,41 @@ class PortfoliosController extends Controller
 
 
     public function edit($id){
-        $portfolio = Portfolio::findOrFail($id);
-        return view('portfolios.save_portfolios',get_defined_vars()); //بترجع كل القيم المعرفة
+        $portfolioss=Portfolio_media::where('portfolio_id',$id)->get()->first();
+        $portfoliosimage=Portfolio_media::where('portfolio_id',$id)->get();
+       //return $portfolioss['type'];
+       $portfolio = Portfolio::findOrFail($id);
+      //return $portfolio;
+        return view('portfolios.save_portfolios',get_defined_vars())->with('portfolioss',$portfolioss)->with('portfoliosimage',$portfoliosimage); //بترجع كل القيم المعرفة
 
     }
 
     public function update(Request $request){
         $inputs=$request->all();
-        $portfolio = Portfolio::findOrFail($request->user_id);
+        //dd($inputs);
+        $portfolio = Portfolio::findOrFail($request->portfolio_id);
         $portfolio->update($inputs);
+        $portfolio_img=Portfolio_media::where('portfolio_id',$request->portfolio_id)->get();
+        $i=0;
+        $updated_ids = $request->profile_avatar_remove;
+        foreach($portfolio_img as  $img){
+            if($img->id!=$updated_ids[$i++]){
+                $img->delete();
+            }
+        }
+        Portfolio_media::where('portfolio_id',$request->portfolio_id)->
+        update([
+            
+            'type'=>$request->type,
+        ]);
 
-        // if($request->img){
-        //     $portfolio->img = uploadImage($request->img,Portfolio::MEDIA_PATH,'400','', $portfolio->img??'');
-        // }
-
+        if($request->name!=null ){
+            foreach($request->name as  $key=>$value){
+                $img = Portfolio_media::find($key);
+                $img->name = uploadImage($value,Portfolio_media::MEDIA_PATH,'400','', $img->name??'');
+                $img->save();
+            }
+        }
 
         $portfolio->save();
        
@@ -99,7 +124,7 @@ class PortfoliosController extends Controller
 
 
     public function delete(Request $request){
-        $img=Portfolio_media::where('portfolio_id',$request->id)->delete();
+        // $img=Portfolio_media::where('portfolio_id',$request->id)->delete();
         $data = Portfolio::findOrFail($request->id)->delete();
 
         return sendResponse(true, null, null , 200);

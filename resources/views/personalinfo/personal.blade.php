@@ -59,9 +59,8 @@ span.select2.select2-container.select2-container--default {
                                                                     <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
                                                                     <div class="col-lg-9 col-xl-6">
 																		<div class="image-input image-input-outline" id="kt_image_1">
-                                                                        
-																				<div class="image-input-wrapper" style="background-image: url({{
-																				    $person ? $person->img : asset('metronic/media/users/blank.png')}})"></div>
+                                                                            
+																				<div class="image-input-wrapper" style="background-image: url({{$person->img ??''}})"></div>
 																				<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
 																					<i class="fa fa-pen icon-sm text-muted"></i>
 																					<input type="file" name="img" accept=".png, .jpg, .jpeg" />
@@ -105,10 +104,10 @@ span.select2.select2-container.select2-container--default {
                                                                         <label class="col-3">Gender <span style="color:red;font-size: large;">*</span></label>
                                                                         <div class="col-9 radio-inline">
 																			<label class="radio">
-																			<input type="radio" name="gender" value="female" {{ ($person->gender) == 'female' ? 'checked':'' }} />
+																			<input type="radio" name="gender" value="female " {{ ($person->gender ?? '') == 'female' ? 'checked':'' }} />
 																			<span></span>female</label>
 																			<label class="radio">
-																			<input type="radio" name="gender" value="male" {{ ($person->gender) == 'male' ? 'checked':'' }} />
+																			<input type="radio" name="gender" value="male" {{ ($person->gender ?? '') == 'male' ? 'checked':'' }} />
 																			<span></span>male</label>
 																		</div>
                                                                     </div>
@@ -164,7 +163,7 @@ span.select2.select2-container.select2-container--default {
 																				 $maritals = array('Single', 'Married', 'Widowed', 'Separated','Divorced');
 																				  ?>
 																			   @foreach($maritals as $type)
-																		        <option value="{{$type}}" {{ ($person->marital) == '$type' ? 'selected':'' }}>  {{$type }}	</option>
+																		        <option value="{{$type}}" {{ ($person->marital ??'') == $type ? 'selected':'' }}>  {{$type }}	</option>
 																				@endforeach
 																		
                                                                             </select>
@@ -177,10 +176,10 @@ span.select2.select2-container.select2-container--default {
                                             <div class="form-group row">
 												<label class="col-form-label  col-3 ">Language <span style="color:red;font-size: large;">*</span></label>
 												  <div class="col-9 ">
-													<select class="form-control select2 form-control-solid " id="kt_select2_3"  " name="language_id" multiple="multiple">
+													<select class="form-control select2 form-control-solid " id="kt_select2_3"  " name="language_id[]" multiple="multiple">
                                                     <?php $languages = \App\Models\Language::all(); ?>
 														  @foreach($languages as $language)       
-                                                                <option value="{{$language->code}}" {{ ($language->id) == '$person->peoplelanguage->language_id' ? 'selected':'' }} >{{$language->name}}</option>
+                                                                <option value="{{$language->code}}" {{ ($language->code) == '$person->language_id' ? 'selected':'' }} >{{$language->name}}</option>
                                                                    @endforeach        
 
 													</select>

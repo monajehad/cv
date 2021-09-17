@@ -49,15 +49,16 @@ var datatable_portfolios = function () {
             {
                 field: "project",
                 title: 'project',
+                height:70,
                 width: 170,
                 textAlign: 'left',
 
                 template: function (t) {
-        //     console.log(t.portfolios_media);
+            // console.log(t.portfolios_media);
                     
                     return `<div class="d-flex align-items-center style="width: inherit;">
-								<div class=" symbol symbol-40 flex-shrink-0"">
-									<img src="/storage/uploads/tmp/${t && t[0] ? t[0].portfolios_media.name : ''}"  height="50px!important" width="50px!important" style="object-fit: contain;">
+								<div class=" symbol symbol-40 flex-shrink-0">
+									<img src=" ${t!=null?(t.portfolio_media.length!=0?t.portfolio_media[0].name:""):""}" height="70px!important"  max-width="70px !important"0 style="object-fit: contain; ">
 								</div>
 								<div class=" mx-2 ">
 									<a href="#" class="text-dark-75 font-weight-bold line-height-sm">${t.portfolio_name}</a>
@@ -74,13 +75,9 @@ var datatable_portfolios = function () {
                 width: 90,
                 textAlign: "left",
                 template: function (t) {
-            
-                        
+                    console.log();
                         return `<span class="text-dark-75 font-weight-bold line-height-sm">
-                      ${t.portfolios_media}  </span>
-                                         `;
-                
-                                         
+                      ${t!=null?(t.portfolio_media.length!=0?t.portfolio_media[0].type:""):""}</span> `;
 
                 }
             },

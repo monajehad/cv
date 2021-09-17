@@ -13,7 +13,9 @@ class Language extends Model
    
     public function people()
     {
-        return $this->hasOne(People::class);
-        // return $this->belongsToMany(People::class,'people_languages','language_id','people_id');
+        //return $this->hasOne(People::class);
+         return $this->belongsToMany(People::class,'people_languages','language_id','people_id');
+         //  classname , table name, column name in table belong to this model , another coulmn
     }
 }
+

@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Auth;
 
 class PeopleController extends Controller
 {
-
     public function index()
     {    
         
-        //Auth::user()->id;
+       // return Auth::user()->id;
          $person = People::where('user_id',Auth::user()->id)->first();
-        
+         
+       // return($person);
         return view('personalinfo.personal',array("person"=>$person));
 
     }
@@ -58,6 +58,21 @@ class PeopleController extends Controller
                 $person->img = uploadImage($request->img,People::MEDIA_PATH,'400');
               
             }
+              $languages = $request->post('language_id');
+            if($languages != ""){
+                foreach($languages as $language_id){
+                    //  DB::table('post_tag')->insert([
+    
+                      //mass-assigned
+                        PeopleLanguage::create([
+                          'people_id' => $person->id,
+                          'language_id' => $language_id
+                      ]);
+                  }
+            }
+            // $languages = $request->post('language_id');
+            // $person->language()->sync($languages);
+
             $person->save();
             //address
             $inputs['people_id']=$person->id;

@@ -33,7 +33,7 @@ $("#save_portfolios_form").validate({
 function savePortfolios(form) {
     let form_data = new FormData(form);
     var url = "/user/portfolios/store";
-    if($('#portfolios_id').val() != 0) url = "/user/portfolios/update";
+    if($('#portfolio_id').val() != 0) url = "/user/portfolios/update";
     $.ajax({
         url: baseUrl + url,
         type: 'POST',
@@ -74,7 +74,7 @@ function savePortfolios(form) {
 
 
 $(document).on('click','.add_portfolios_btn',function (){
-    resetForm('save_portfolios_form');
+    resetForm('save_portfolio_form');
     $('#portfolios_id').val(null);
 });
 

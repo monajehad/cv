@@ -10,12 +10,14 @@ class PeopleLanguage extends Model
         'people_id','language_id'
     ];
  
-   public function language()
-    {
-        return $this->belongsToMany(Language::class);
-    }
-    public function people()
-    {
-        return $this->belongsTo(People::class);
-    }
+    protected $table = 'people_languages';
+
+//    public function language()
+//     {
+//         return $this->belongsToMany(Language::class);
+//     }
+//     public function people()
+//     {
+//         return $this->belongsTo(People::class);
+//     }
 }

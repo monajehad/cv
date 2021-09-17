@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class People extends Model
-{     const MEDIA_PATH = "users/"; 
+{     const MEDIA_PATH = "public/users"; 
     protected $table ="peoples";
     protected $fillable = [
         'img','name','email','gender','mobile',
@@ -21,14 +22,27 @@ class People extends Model
     {
         return $this->hasOne(PeopleAddress::class);
     }
-    public function peoplelanguage()
+    // public function peoplelanguage()
+    // {
+    //     return $this->hasOne(peopleLanguage::class);
+    // }
+    public function language()
     {
-        return $this->hasOne(peopleLanguage::class);
+    return $this->belongsToMany(Language::class,'people_languages','people_id','language_id');  
+    
+
     }
-    public function getImgAttribute()
+    public function getImgAttribute($image)
     {
-        return "";
+        if($image){
+            $image = Storage::url('public/users/'.$image.'');
+            return $image;
+        }else{
+            $image = Storage::url('public/users/blank.png');
+            return $image;
+        }
     }
+
     public function getImgUrlAttribute()
     {
         return getImageUrl(self::MEDIA_PATH , $this->img);
