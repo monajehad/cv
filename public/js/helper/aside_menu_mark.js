@@ -1,10 +1,10 @@
 $(document).ready(function () {
     var path_for_aside_menu = window.location.href;
-    $('.kt-aside-menu .menu-item a').filter(function () {
+    $('.aside-menu .menu-nav  .menu-item  ').filter(function () {
         return this.href == path_for_aside_menu;
-    }).parent().addClass('kt-menu__item--active');
+    }).addClass('menu-item-active');
 
-    $('.kt-aside-menu .kt-menu__item').filter(function () {
+    $('.aside-menu .menu-item').filter(function () {
         return $('a', this).attr('href') === path_for_aside_menu;
-    }).closest('.kt-menu__item--submenu').addClass('kt-menu__item--open');
+    }).closest('.menu-item').addClass('menu-item-open ');
 });

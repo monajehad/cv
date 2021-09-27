@@ -40,7 +40,7 @@
 							<!--begin::Container-->
 			  <div class="container">
 					
-							<div class="card" id="add_your_first_skill">
+							<div class="card" id="add_your_first_skill"  style="display: none;">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
 										<!--begin::Wrapper-->
@@ -68,7 +68,7 @@
 						
                                
                               <!--begin::Card-->
-							  <div class="row" id="skill_container">
+							  <div class="row" id="skill_container" >
 							
 
 
@@ -92,9 +92,7 @@
 
 
     
-    <script>
-         new KTAvatar('kt_user_avatar_1');
-    </script>
+   
 
 @endsection
 

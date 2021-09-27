@@ -1,3 +1,4 @@
+ 
 <div class="col-xl-6">
 				<div class="card card-stretch card-custom gutter-b">
 										<!--begin::Body-->

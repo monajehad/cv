@@ -41,7 +41,7 @@
 							<div class="container">
 								<!--begin::Card-->
 									<!--begin::Card-->
-									<div class="card" id="add_your_first_social">
+									<div class="card" id="add_your_first_social"  style="display: none;">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
 										<!--begin::Wrapper-->
@@ -88,9 +88,7 @@
 
 
     
-    <script>
-         new KTAvatar('kt_user_avatar_1');
-    </script>
+  
 
 @endsection
 

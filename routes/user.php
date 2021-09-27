@@ -10,6 +10,7 @@ use App\Http\Controllers\User\TestimonialController;
 use App\Http\Controllers\User\SociallController;
 use App\Http\Controllers\User\PeopleController;
 use App\Http\Controllers\User\PortfoliosController;
+use App\Http\Controllers\Design\DesignController;
 
 
 
@@ -89,8 +90,17 @@ Route::post('/portfolios/store/files' , [PortfoliosController::class , 'upload_i
  Route::post('/portfolios/status/update' , [PortfoliosController::class , 'updateStatus'])->name('user.portfolios.updateStatus');
 
       
-    
-  
+    //design
+ Route::get('/design/index' , [DesignController::class , 'index'])->name('user.design.index');
+ Route::get('/design/showdesign1' , [DesignController::class , 'showDesign1'])->name('user.design.showdesign1');
+ Route::get('/design/showdesign2' , [DesignController::class , 'showDesign2'])->name('user.design.showdesign2');
+ Route::get('/design/showdesign/{id}' , [DesignController::class , 'showDesign'])->name('user.design.showdesign');
+ Route::post('/design/status/update' , [DesignController::class , 'updateStatus'])->name('user.design.updateStatus');
+ Route::get('/design/showdesign3' , [DesignController::class , 'showDesign3'])->name('user.design.showdesign3');
+
+
+ 
+ 
 
     
 });

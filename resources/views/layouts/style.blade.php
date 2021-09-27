@@ -15,3 +15,9 @@
 <link href="{{asset('metronic/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
 <!--end::Layout Themes-->
 <link rel="shortcut icon" href="{{asset('metronic/media/logos/favicon.ico')}}" />  
+<link
+    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet"
+/>
+
+<link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />

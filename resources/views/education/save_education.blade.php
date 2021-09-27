@@ -18,18 +18,18 @@
                             <div class="ps__thumb-y" tabindex="0" style="top: 298px; height: 300px;"></div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 text-left col-form-label">Place Name
-                                <span style="color:red;font-size: large;">*</span>
+                            <label class="col-xl-3 col-lg-3 text-left col-form-label required">Place Name
+                               
                             </label>
                             <div class="col-lg-9 col-xl-6">
-                                <input name="place_name" id="place_name" class="form-control form-control-lg form-control-solid" type="text"
+                                <input name="place_name" id="place_name" class="form-control form-control-lg form-control-solid " type="text"
                                         placeholder="Place Name"/>
                                 <span class="text-danger lev"></span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 text-left col-form-label">Specialization
-                                <span style="color:red;font-size: large;">*</span>
+                            <label class="col-xl-3 col-lg-3 text-left col-form-label required">Specialization
+                                
                             </label>
                             <div class="col-lg-9 col-xl-6">
                                 <input name="specialization" id="specialization" class="form-control form-control-lg form-control-solid" type="text"
@@ -38,8 +38,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 text-left col-form-label">Degree
-                                <span style="color:red;font-size: large;">*</span>
+                            <label class="col-xl-3 col-lg-3 text-left col-form-label required">Degree
                             </label>
                             <div class="col-lg-9 col-xl-6 ">
                                 <select name="degree" id="degree" class="form-control form-control-lg form-control-solid selectpicker">
@@ -57,8 +56,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end)
-                                <span style="color:red;font-size: large;">*</span>
+                            <label class="col-xl-3 col-lg-3 text-left col-form-label required">Date(start-end)
                             </label>
                             <div class="col-lg-9 col-xl-6">
                             <div class="input-daterange input-group input-group-solid" id="kt_datepicker_5">

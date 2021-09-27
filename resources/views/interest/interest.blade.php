@@ -50,7 +50,7 @@
     <div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-		                    	<div class="card" id="add_your_first_interest">
+		                    	<div class="card" id="add_your_first_interest"  style="display: none;">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
 										<!--begin::Wrapper-->

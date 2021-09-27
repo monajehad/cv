@@ -44,7 +44,10 @@
 									<!--end::Search Form-->
                                     </div>
                                 </div>
+							
                                 <div class="d-flex align-items-center">
+								<a href="{{route('user.portfolios.index')}}" class="btn btn-light-primary px-4  add_portfolios_btn mr-5" > < Back</a>
+
 									<!--begin::Actions-->
 									<a href="{{route('user.portfolios.create')}}" class="btn btn-primary add_portfolios_btn" >Add portfolios</a>
 
@@ -68,7 +71,7 @@
 													     <input value="{{$portfolio->id ??''}}" type="hidden" id="portfolio_id" name="portfolio_id">
 
 																         	<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Portfolios Name <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Portfolios Name 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid"
@@ -77,15 +80,17 @@
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Link <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Link </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid"
 																						value="{{ $portfolio->link ?? ''}}" type="text" name="link" placeholder="http://" />
 																					</div>
+																					
+																				
 																				</div>
 																				
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> date(start-end) <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required"> date(start-end)</label>
 																					<div class="col-lg-9 col-xl-6">
 																						<div class="input-daterange input-group input-group-solid" id="kt_datepicker_5">
 																							<input type="text" class="form-control" placeholder="start" 
@@ -106,13 +111,15 @@
                                                                                 <div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
                                                                                  <div class="col-lg-9 col-xl-6">
-																				 <textarea  name="details" value="{{ $portfolio->details ?? ''}}" class="form-control i7_max_length" id="details" maxlength="500" placeholder="" rows="6"></textarea>
+																				 <textarea  name="details" class="form-control i7_max_length" id="details" maxlength="500" placeholder="" rows="6">
+																				 {{ $portfolio->details ?? ''}}
+																				 </textarea>
 																							<span class="form-text text-muted">maximum 500 character</span>
 																							<span class="text-danger lev"></span>
 																				</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> media_type <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> media_type </label>
 																				   <div class="col-lg-9 col-xl-6 input-group-solid">
 																					   <select class="form-control selectpicker" name="type">
 																					      <?php $type_media = \App\Models\Portfolio_media::all();
@@ -128,7 +135,7 @@
 																				</div>
 
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> upload project media <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> upload project media </label>
 																				   <div class="col-lg-9 col-xl-6 input-group-solid">
 																				   <input type="file" class="filepond" multiple  data-allow-reorder="true"
                                                                                       id="upload" name="name_media[]" value="{{ $portfolioss->name ?? ''}}" >
@@ -147,7 +154,27 @@
 		
 
 													<div class="image-input image-input-outline" id="kt_image_{{$i++}}" style="background-image: url(assets/media/users/blank.png)">
+													@if($image->type=='video')
+														<video class="image-input-wrapper" controls>
+															<source src="{{$image->name ?? ''}}"  >
+														</video>
+													@elseif($image->type=='doc')
+														
+														<br>
+														<br>
+														<a  href="{{$image->name ?? ''}}" target="_blank">
+															View Document
+														</a > 
+														<br>
+														<br>
+														<br>
+													@elseif($image->type=='sound')
+														<audio  class="image-input-wrapper" controls>
+															<source src="{{$image->name ?? ''}}"  >
+														</audio >
+													@else
 														<div class="image-input-wrapper" style="background-image: url('{{$image->name?? ''}}')"></div>
+													@endif
 														<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
 															<i class="fa fa-pen icon-sm text-muted"></i>
 															<input type="file" name="name[{{$image->id}}]" accept=".png, .jpg, .jpeg" />
@@ -183,11 +210,22 @@
 
 @section('script')
 <script>
+	
+    FilePond.registerPlugin(FilePondPluginImagePreview);
+
+    FilePond.registerPlugin(FilePondPluginImageResize);
 
 const inputElement = document.querySelector('input[id="upload"]');
     let pond = FilePond.create(inputElement);
 	pond.setOptions({
+	allowImagePreview:true,
     maxFiles: 10,
+	allowImageResize:true,
+	imageResizeTargetWidth	:100,
+	width:100,
+	imagePreviewMinHeight:50,
+	imagePreviewMaxHeight:100,
+
     // required: true
 });
 
@@ -207,18 +245,48 @@ const inputElement = document.querySelector('input[id="upload"]');
 
    <script>
 
+// var KTImageInputDemo = function () {
+// 	// Private functions
+// 	var initDemos = function () {
+// 		// Example 1
+// 		let i=1;
+// 		let portImg = $portfoliosimage[];
+
+// 		 for (i = 0; i < $portImg.length; i++) {
+// 		var avatar1 = new KTImageInput(`kt_image_${i}`);
+
+
+// 		 }
+// 	}
+
+// 	return {
+// 		// public functions
+// 		init: function() {
+// 			initDemos();
+// 		}
+// 	};
+// }();
+
+// KTUtil.ready(function() {
+// 	KTImageInputDemo.init();
+// });  
+
+
 var KTImageInputDemo = function () {
 	// Private functions
 	var initDemos = function () {
 		// Example 1
 		let i=1;
-		let portImg = portfoliosimage[];
+		// let portImg = new Array();
+		// let portImg = $portfoliosimage;
+		// var avatar1 = new KTImageInput('kt_image_1');
 
-		 for (i = 0; i < $portImg.length; i++) {
+		for (i = 0; i < 9; i++) {
 		var avatar1 = new KTImageInput(`kt_image_${i}`);
+		}
 
 
-		 }
+	
 	}
 
 	return {
@@ -231,6 +299,6 @@ var KTImageInputDemo = function () {
 
 KTUtil.ready(function() {
 	KTImageInputDemo.init();
-});  
+});
 	   </script>
 @endsection

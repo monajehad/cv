@@ -77,7 +77,7 @@ span.select2.select2-container.select2-container--default {
                                                             
                                                             
                                                                 <div class="form-group row">
-                                                                        <label class="col-3">Full Name <span style="color:red;font-size: large;">*</span></label>
+                                                                        <label class="col-3 required">Full Name </label>
                                                                         <div class="col-9">
                                                                             <input class="form-control form-control-solid" type="text" name="name" placeholder="full name" value="{{$person->name??''}}"/>
 															                	<span class="text-danger lev"></span>	
@@ -85,7 +85,7 @@ span.select2.select2-container.select2-container--default {
 																		</div>
                                                                     </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3">Email <span style="color:red;font-size: large;">*</span></label>
+                                                                        <label class="col-3 required">Email </label>
                                                                         <div class="col-9">
                                                                             <div class="input-group input-group-solid">
                                                                                 <div class="input-group-prepend">
@@ -101,7 +101,7 @@ span.select2.select2-container.select2-container--default {
                                                                         </div>
                                                                     </div>
 																	<div class="form-group row">
-                                                                        <label class="col-3">Gender <span style="color:red;font-size: large;">*</span></label>
+                                                                        <label class="col-3 required">Gender </label>
                                                                         <div class="col-9 radio-inline">
 																			<label class="radio">
 																			<input type="radio" name="gender" value="female " {{ ($person->gender ?? '') == 'female' ? 'checked':'' }} />
@@ -112,7 +112,7 @@ span.select2.select2-container.select2-container--default {
 																		</div>
                                                                     </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3">Contact Phone <span style="color:red;font-size: large;">*</span></label>
+                                                                        <label class="col-3 required">Contact Phone </label>
                                                                         <div class="col-9">
                                                                             <div class="input-group input-group-solid">
                                                                                 <div class="input-group-prepend">
@@ -130,7 +130,7 @@ span.select2.select2-container.select2-container--default {
                                                                         </div>
                                                                     </div>
                                                         <div class="form-group row">
-                                                             <label class="col-3">Birthday <span style="color:red;font-size: large;">*</span></label>
+                                                             <label class="col-3 required">Birthday </label>
                                                             <div class="col-9">
                                                                     <div class="input-group date input-group-solid">
                                                                         <input type="text" class="form-control form-control-solid" readonly="readonly" value="{{$person->birthday??'05/20/2017'}}" 
@@ -147,7 +147,7 @@ span.select2.select2-container.select2-container--default {
                                                             </div>
                                                         </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-3"> Original Nationality <span style="color:red;font-size: large;">*</span></label>
+                                                                        <label class="col-3 required"> Original Nationality </label>
                                                                         <div class="col-9">
                                                                             <input class="form-control form-control-solid" type="text" placeholder="nationality" 
 																			value="{{$person->nationality??''}}"name="nationality" id="nationality" />
@@ -155,7 +155,7 @@ span.select2.select2-container.select2-container--default {
                                                                         </div>
                                                                     </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-3">Marital <span style="color:red;font-size: large;">*</span></label>
+                                                                    <label class="col-3 required">Marital </label>
                                                                     <div class=" col-9 ">
                                                                         <div class="input-group input-group-solid" >
                                                                             <select class="form-control form-control-solid selectpicker"  id="marital" name="marital">
@@ -174,12 +174,12 @@ span.select2.select2-container.select2-container--default {
                                                                  </div>
                                                                 
                                             <div class="form-group row">
-												<label class="col-form-label  col-3 ">Language <span style="color:red;font-size: large;">*</span></label>
+												<label class="col-form-label  col-3 required ">Language </label>
 												  <div class="col-9 ">
 													<select class="form-control select2 form-control-solid " id="kt_select2_3"  " name="language_id[]" multiple="multiple">
                                                     <?php $languages = \App\Models\Language::all(); ?>
 														  @foreach($languages as $language)       
-                                                                <option value="{{$language->code}}" {{ ($language->code) == '$person->language_id' ? 'selected':'' }} >{{$language->name}}</option>
+                                                                <option value="{{$language->id}}" {{$person->isHasLanguage($language->id)?"selected":""}} >{{$language->name}}</option>
                                                                    @endforeach        
 
 													</select>
@@ -189,7 +189,7 @@ span.select2.select2-container.select2-container--default {
 											</div>
                                        
 											<div class="form-group row">
-												<label class="col-form-label col-3 ">Country <span style="color:red;font-size: large;">*</span></label>
+												<label class="col-form-label col-3 required">Country </label>
 												<div class=" col-9 ">
 													<select class="form-control select2 form-control-solid  kt_select2_1 select2"  id="country" name="country_id">
 												    	<?php $countries = \App\Models\country::all(); ?>
@@ -204,14 +204,14 @@ span.select2.select2-container.select2-container--default {
 											
                                                          
                                                           <div class="form-group row">
-                                                                <label class="col-3">City <span style="color:red;font-size: large;">*</span></label>
+                                                                <label class="col-3 required">City </label>
                                                                  <div class="col-9">
                                                                   <input class="form-control form-control-solid" type="text" name="city" value="{{$person->peopleaddress->city??''}}" placeholder="city"/>
                                                                 </div>
                                                            </div> 
 
 														   <div class="form-group row">
-                                                                <label class="col-3">Street <span style="color:red;font-size: large;">*</span></label>
+                                                                <label class="col-3 required">Street </label>
                                                                  <div class="col-9">
                                                                   <input class="form-control form-control-solid" type="text" name="street" value="{{$person->peopleaddress->street??''}}" placeholder="Street"/>
 																<span class="text-danger lev"></span>	
@@ -220,9 +220,11 @@ span.select2.select2-container.select2-container--default {
                                                            </div> 
 
                                                          <div class="form-group row">
-                                                            <label class="col-3">description</label>
+                                                            <label class="col-3 required">description</label>
                                                             <div class="col-9">
-															<textarea  name="details" id="details" class="form-control i7_max_length" value="{{$person->details??''}}" maxlength="500" placeholder="" rows="6"></textarea>
+															<textarea  name="details" id="details" class="form-control i7_max_length"  maxlength="500" placeholder="" rows="6">
+															{{$person->details??''}}
+															</textarea>
 																<span class="form-text text-muted">maximum 500 character</span>
 																<span class="text-danger lev"></span>	
 															</div>
@@ -251,9 +253,6 @@ span.select2.select2-container.select2-container--default {
 
 <script src="{{asset('js/blades/user/personal/save_person.js')}}"></script>
     
-    <script>
-         new KTAvatar('kt_image_1');
-    </script>
-
+   
 @endsection
 

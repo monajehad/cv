@@ -15,14 +15,14 @@
 																			<input name="social_id" value="0" id="social_id" type="hidden">
                                                                                 
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">link <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">link 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" id="link" name="link" value="{{$social->link??'Http://'}}"  />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label"> Social media <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required"> Social media </label>
 																					<div class="col-lg-9 col-xl-6">
 																					   <select class="form-control form-control-lg form-control-solid selectpicker"  name="social_website_id"id="social_website_id">
                                                                                         <?php $socials = \App\Models\Social_website::all(); ?>

@@ -15,7 +15,7 @@
 																			<input name="skill_id" value="0" id="skill_id" type="hidden">
                                                                                 
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">skill Name <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">skill Name 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" id="name" name="name" placeholder="Skill Name" />
@@ -25,12 +25,15 @@
 																				
 																				
                                                                                 <div class="form-group row">
-																					 <label class="col-xl-3 col-lg-3 text-left col-form-label">level <span style="color:red;font-size: large;">*</span></label>
+																					 <label class="col-xl-3 col-lg-3 text-left col-form-label required">level </label>
 																					  <div class="col-lg-9 col-xl-6">
-                                                                                            <select class="form-control selectpicker form-control-solid " id="level" name="level" >
+																					  <div class="ion-range-slider">
+																							<input type="hidden" id="kt_slider_1" name="level" />
+																						</div>
+                                                                                            <!-- <select class="form-control selectpicker form-control-solid " id="level" name="level" >
 																						       <option value="junior">junior</option>
 																						       <option value="good"> Good</option>
-                                                                                               <option value="advanced">advanced </option>
+                                                                                               <option value="advanced">advanced </option> -->
 																				
 																					
 																			

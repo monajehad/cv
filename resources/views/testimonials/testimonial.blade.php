@@ -42,7 +42,7 @@
 							<!--begin::Container-->
 							<div class="container">
 								<!--begin::Card-->
-								<div class="card" id="add_your_first_testimonial">
+								<div class="card" id="add_your_first_testimonial" style="display: none;">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
 										<!--begin::Wrapper-->
@@ -92,10 +92,6 @@
 <script src="{{asset('js/blades/user/upstatus.js')}}"></script>
 
 
-    
-    <script>
-         new KTAvatar('kt_user_avatar_1');
-    </script>
 
 @endsection
 

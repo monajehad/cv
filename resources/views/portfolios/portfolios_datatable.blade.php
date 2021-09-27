@@ -106,10 +106,5 @@
 <script src="{{asset('js/blades/user/portfolios/index.js')}}"></script>
 
 
-    
-    <script>
-         new KTAvatar('kt_user_avatar_1');
-    </script>
-
 @endsection
 

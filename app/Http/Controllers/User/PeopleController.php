@@ -44,11 +44,18 @@ class PeopleController extends Controller
 
             $person_address= PeopleAddress::where('people_id',$request->people_id)->firstOrFail();
             $person_address->update($inputs);
+            PeopleLanguage::where('people_id',$request->people_id)->delete();
 
-            $person_language= PeopleLanguage::where('people_id',$request->people_id)->firstOrFail();
-            $person_language->update($inputs);
-
+            if($inputs['language_id'] != ""){
+                foreach($inputs['language_id'] as $language_id){
+                  PeopleLanguage::create([
+                    'people_id' => $person->id,
+                    'language_id' => $language_id
+                  ]);
+                }
+            }
         } else {
+          dd(1);
            $inputs['birthday'] = (Carbon::create($inputs['birthday']))->format("Y-m-d");
           
             $person = People::create(

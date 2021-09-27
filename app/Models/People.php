@@ -26,11 +26,14 @@ class People extends Model
     // {
     //     return $this->hasOne(peopleLanguage::class);
     // }
-    public function language()
+    public function languages()
     {
     return $this->belongsToMany(Language::class,'people_languages','people_id','language_id');  
     
 
+    }
+    public function isHasLanguage($id){
+        return PeopleLanguage::where('people_id',$this->id)->where('language_id',$id)->count()!=0;
     }
     public function getImgAttribute($image)
     {

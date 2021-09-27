@@ -42,7 +42,7 @@
 
 							<!--begin::Container-->
 							<div class="container" >
-				     			<div class="card" id="add_your_first_course">
+				     			<div class="card" id="add_your_first_course"  style="display: none;">
 								<!--begin::Card body-->
 								    	<div class="card-body p-0">
 										<!--begin::Wrapper-->
@@ -88,10 +88,7 @@
 <script src="{{asset('js/blades/user/course/index.js')}}"></script>
 
 <script src="{{asset('js/blades/user/upstatus.js')}}"></script>
-    <script>
-		//refreshCourses();
-        new KTAvatar('kt_user_avatar_1');
-    </script>
+    
 
 @endsection
 

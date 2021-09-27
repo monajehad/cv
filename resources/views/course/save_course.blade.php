@@ -15,28 +15,31 @@
 																			<input name="course_id" value="0" id="course_id" type="hidden">
                                                                                       
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Course Name <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Course Name
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" id="course_name" type="text" name="name" placeholder="Course Name" />
 																					</div>
+																					<span class="text-danger lev"></span>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Hours <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Hours 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" id="hours" type="text" name="hours" placeholder=" Hours" />
 																					</div>
+																					<span class="text-danger lev"></span>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">source of the course <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">source of the course </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" id="source" type="text" name="source" placeholder="Source" />
 																					</div>
+																					<span class="text-danger lev"></span>
 																				</div>
 																				
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Date(start-end) <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Date(start-end) </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<div class="input-daterange input-group input-group-solid" id="kt_datepicker_5">
 																							<input type="text" class="form-control" placeholder="start" name="start_date" id="start_date"/>
@@ -48,7 +51,9 @@
 																							<input type="text" class="form-control" name="end_date" placeholder="end" id="end_date"/>
 																						</div>
                                                                                     </div>
+																					<span class="text-danger lev"></span>
 																				</div>
+
                                                                                 <div class="form-group row">
 																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Description</label>
 																					<div class="col-lg-9 col-xl-6">

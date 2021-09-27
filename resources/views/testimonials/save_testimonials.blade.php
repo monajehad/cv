@@ -15,21 +15,21 @@
 																			<input name="testimonial_id" value="0" id="testimonial_id" type="hidden" >
                                                                                       
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Name <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Person's Name 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" id="person_name" type="text" name="person_name" placeholder="Person's Name" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's email <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Person's email 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																						<input class="form-control form-control-lg form-control-solid" type="text" id="person_email" name="person_email" placeholder=" Person's email" />
 																					</div>
 																				</div>
 																				<div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">Person's Phone <span style="color:red;font-size: large;">*</span>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required">Person's Phone 
                                                                                       </label>
 																					<div class="col-lg-9 col-xl-6">
 																					<div class="input-group input-group-solid">
@@ -42,7 +42,7 @@
 																							</div>																					</div>
 																				</div>
                                                                                 <div class="form-group row">
-																					<label class="col-xl-3 col-lg-3 text-left col-form-label">About opinion <span style="color:red;font-size: large;">*</span></label>
+																					<label class="col-xl-3 col-lg-3 text-left col-form-label required" >About opinion </label>
 																					<div class="col-lg-9 col-xl-6">
 																					<textarea  name="about" id="about" class="form-control i7_max_length"  maxlength="500" placeholder="" rows="6"></textarea>
 																						<span class="form-text text-muted">maximum 500 character</span>

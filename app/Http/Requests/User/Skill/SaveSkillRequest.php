@@ -28,7 +28,7 @@ class SaveSkillRequest extends FormRequest
 
         $rules = [
             'name' => 'required|string|max:200|min:3',
-            'level' => 'required',
+            'level' => 'required|integer|min:1|max:100',
            
             
         ];

@@ -1,14 +1,14 @@
 remove = function (id, link,datatable, callback) {
 
     swal.fire({
-        title: "Delete confirmation",
-        text: "Are you sure you want to delete this item",
+        title: 'delete_title',
+        text: 'delete_confirmation',
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: '#3cc4fa',
         cancelButtonColor: '#ff3e51',
-        confirmButtonText: "Yes, delete it",
-        cancelButtonText: "No, Cancel",
+        confirmButtonText:'yes_delete',
+        cancelButtonText: 'cpanel.cancel',
 
     })
         .then(willDelete => {
@@ -23,12 +23,12 @@ remove = function (id, link,datatable, callback) {
                     success: function (result) {
                         if(result.status)
                         {
-                            let msg = result.message ;
+                            let msg = result.message ?? 'deleted_success';
                             toastr.success(msg);
                         }
                         else
                         {
-                            let msg = result.message ;
+                            let msg = result.message ?? 'error';
                             toastr.error(msg);
                         }
 
@@ -42,7 +42,7 @@ remove = function (id, link,datatable, callback) {
 
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
-                        swalException("error");
+                        swalException('internet_error');
                     },
                     complete: function(){
                     }

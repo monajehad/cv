@@ -5,7 +5,11 @@ var KTIONRangeSlider = function () {
     // Private functions
     var demos = function () {
         // basic demo
-        $('#kt_slider_1').ionRangeSlider();
+        $('#kt_slider_1').ionRangeSlider({
+            min:1,
+            max: 100,
+            keyboard: true,
+        });
 
         // min & max values
         $('#kt_slider_2').ionRangeSlider({

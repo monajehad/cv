@@ -49,19 +49,18 @@ var datatable_portfolios = function () {
             {
                 field: "project",
                 title: 'project',
-                height:70,
-                width: 170,
+                width: 280,
                 textAlign: 'left',
-
+                autoHide: false,
                 template: function (t) {
             // console.log(t.portfolios_media);
                     
-                    return `<div class="d-flex align-items-center style="width: inherit;">
-								<div class=" symbol symbol-40 flex-shrink-0">
-									<img src=" ${t!=null?(t.portfolio_media.length!=0?t.portfolio_media[0].name:""):""}" height="70px!important"  max-width="70px !important"0 style="object-fit: contain; ">
+                    return `<div class="d-flex align-items-center " style="overflow-wrap: anywhere;">
+								<div class=" symbol symbol-70 flex-shrink-0">
+									<img src=" ${t!=null?(t.portfolio_media.length!=0?t.portfolio_media[0].name:""):""}" style="object-fit: contain; ">
 								</div>
 								<div class=" mx-2 ">
-									<a href="#" class="text-dark-75 font-weight-bold line-height-sm">${t.portfolio_name}</a>
+									<a href="#" class="text-dark-75 font-weight-bold line-height-sm"">${t.portfolio_name}</a>
 <br>
 									<span class="font-size-sm text-dark-50 text-hover-primary">${t.link}</span>
 								</div>
@@ -146,7 +145,8 @@ var datatable_portfolios = function () {
     
             options.search = {
                 input: $('#generalSearch'),
-                key: 'generalSearch'
+                key: 'generalSearch',
+                delay: 500,
             };
 
             datatable = $('#portfolios_datatable').KTDatatable(options);

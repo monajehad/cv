@@ -25,7 +25,7 @@ class Portfolio_media extends Model
             $image = Storage::url('public/uploads/tmp/'.$image.'');
             return $image;
         }else{
-            $image = Storage::url('public/uploads/tmp/');
+            $image = Storage::url('public/uploads/tmp/default.jpg');
             return $image;
         }
     }

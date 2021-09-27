@@ -25,7 +25,14 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('layouts.style')
 		<style>
 			.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top {
-    z-index: 100 !important;
+    z-index: 1060 !important;
+	
+}
+.required:before{
+  content:"*";
+  /* font-weight:bold; */
+  color: red;
+  font-size:large;
 }
 			</style>
 		@yield('style')

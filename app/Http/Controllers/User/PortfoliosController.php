@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\Course\SaveCourseRequest;
+use App\Http\Requests\User\Portfolio\SavePortfolioRequest;
 use App\Models\Portfolio;
 use App\Models\Portfolio_media;
 use Illuminate\Http\Request;
@@ -41,6 +41,8 @@ class PortfoliosController extends Controller
         return view('portfolios.save_portfolios',get_defined_vars());
     }
     public function upload_img(Request $request){
+        // Portfolio_media::where('portfolio_id',0)->
+        // delete();
     //    dd($request);
         $i=1;
         
@@ -60,7 +62,7 @@ class PortfoliosController extends Controller
             }
         }
     }
-    public function store(Request $request){
+    public function store(SavePortfolioRequest $request){
         //dd($request->type);
         
         $portfolio = Portfolio::create(array_merge($request->all(),['user_id' => Auth::user()->id])); // comment
@@ -89,11 +91,12 @@ class PortfoliosController extends Controller
 
     }
 
-    public function update(Request $request){
+    public function update(SavePortfolioRequest $request){
         $inputs=$request->all();
         //dd($inputs);
         $portfolio = Portfolio::findOrFail($request->portfolio_id);
         $portfolio->update($inputs);
+        
         $portfolio_img=Portfolio_media::where('portfolio_id',$request->portfolio_id)->get();
         $i=0;
         $updated_ids = $request->profile_avatar_remove;
@@ -115,7 +118,12 @@ class PortfoliosController extends Controller
                 $img->save();
             }
         }
+        Portfolio_media::where('portfolio_id',0)->
+        update([
+            'portfolio_id'=>$portfolio->id,
+          
 
+        ]);
         $portfolio->save();
        
 
